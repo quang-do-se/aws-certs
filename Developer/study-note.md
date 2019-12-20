@@ -1330,15 +1330,7 @@ hooks:
 
 - Advantages: user control and audit trail
 
-- Metrics
-
-  - Monitor the **IntegrationLatency** metrics to measure the responsiveness of the backend
-
-  - Monitor the **Latency** metrics to measure the overall responsiveness of your API calls
-
-  - Monitor the **CacheHitCount** and **CacheMissCount** metrics to optimize cache capacities to achieve a desired performance. CacheMissCount tracks the number of requests served from the backend in a given period, when API caching is enabled. On the other hand, CacheHitCount track the number of requests served from the API cache in a given period
-
-1## API Gateway
+## API Gateway
 
 - Stage: dev, test or prod...
 
@@ -1469,6 +1461,14 @@ hooks:
 - **Endpoint URL**
 
   - `https://{restapi_id}.execute-api.{region}.amazonaws.com/{stage_name}/`
+
+- Available Metrics
+
+  - Monitor the **IntegrationLatency** metrics to measure the responsiveness of the backend
+
+  - Monitor the **Latency** metrics to measure the overall responsiveness of your API calls
+
+  - Monitor the **CacheHitCount** and **CacheMissCount** metrics to optimize cache capacities to achieve a desired performance. CacheMissCount tracks the number of requests served from the backend in a given period, when API caching is enabled. On the other hand, CacheHitCount track the number of requests served from the API cache in a given period
 
 ## Elastic Container Service (ECS)
 
