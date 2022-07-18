@@ -48,3 +48,6 @@
 
 ```
 
+#### Use notifications and triggers and CloudWatch events to set up automation between CodeCommit and other services (Lambda, SNS, SQS...)
+
+
