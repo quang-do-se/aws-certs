@@ -7,6 +7,8 @@
 - Determining whether a request is allowed or denied within an account: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow
   - An explicit deny has higher priority than an explicit allow.
 
+#### Securing the Repository and Branches
+
 - Configure an IAM policy to limit pushes and merges to a branch: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-conditional-branch.html#how-to-conditional-branch-create-policy
 
 - Inline Policy to deny making changes in `main` and `prod` branches:
