@@ -2,7 +2,15 @@
 
 #### Overview
 
-- Repository similar to GitHub and BitBucket.
+- A Git repository similar to GitHub and BitBucket.
+
+- It's private, fully managed and highly available.
+
+- Code is only in AWS Cloud acount (increased security and compliance).
+
+- It is secure (encrypted, access control, etc...)
+
+- It can be integrated with Jenkins, CodeBuild and other CI tools.
 
 #### Useful links
 
@@ -94,4 +102,4 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - CloudWatch Events and Lambda can be used as a blue between CodeBuild and other services.
 
-- CodeBuild can sent notification to SNS using CodeBuild triggers.
+- CodeBuild can sent notifications to SNS using CodeBuild triggers.
