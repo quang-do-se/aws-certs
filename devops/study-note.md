@@ -103,3 +103,18 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - CloudWatch Events and Lambda can be used as a blue between CodeBuild and other services.
 
 - CodeBuild can sent notifications to SNS using CodeBuild triggers.
+
+#### Lambda vs. CodeBuild
+
+- Lambda has a timeout of 15 minutes
+- CodeBuild can have between 5 minutes and 8 hours for a timeout.
+
+#### Reference: 
+
+- Buildspec: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+- Samples: https://docs.aws.amazon.com/codebuild/latest/userguide/use-case-based-samples.html
+
+#### Good points
+
+- It's better to have Docker login early in `pre_build` phase so we don't have to waste time building an image if the login fails. Fail fast is better.
+
