@@ -113,6 +113,8 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - Buildspec: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
 - Samples: https://docs.aws.amazon.com/codebuild/latest/userguide/use-case-based-samples.html
+- Restricting access to Systems Manager parameters using IAM policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-access.html
+- Environment variables in build environments: https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
 
 #### Good points
 
