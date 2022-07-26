@@ -115,8 +115,13 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - Samples: https://docs.aws.amazon.com/codebuild/latest/userguide/use-case-based-samples.html
 - Restricting access to Systems Manager parameters using IAM policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-access.html
 - Environment variables in build environments: https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
+- AWS CodeBuild resources and operations: https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
 
 #### Good points
 
 - It's better to have Docker login early in `pre_build` phase so we don't have to waste time building an image if the login fails. Fail fast is better.
+
+- Tip: Go to Support Center to get **Account Number** or **Account Id**
+
+- Intergration with CodeBuild can be implemented with CloudWatch, EventBridge or CodePipeline.
 
