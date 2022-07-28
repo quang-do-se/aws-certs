@@ -62,7 +62,7 @@
 
 ```
 
-#### Use notifications and triggers and CloudWatch events to set up automation between CodeCommit and other services (Lambda, SNS, SQS...)
+#### Use notifications, triggers or CloudWatch events to set up automation between CodeCommit and other services (Lambda, SNS, SQS...)
 
 #### Create an AWS CodeCommit trigger for an AWS Lambda function 
 
@@ -116,6 +116,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - Restricting access to Systems Manager parameters using IAM policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-access.html
 - Environment variables in build environments: https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
 - AWS CodeBuild resources and operations: https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+- Validating AWS CodeCommit Pull Requests with AWS CodeBuild and AWS Lambda: https://aws.amazon.com/blogs/devops/validating-aws-codecommit-pull-requests-with-aws-codebuild-and-aws-lambda/
 
 #### Good points
 
@@ -125,3 +126,36 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - Intergration with CodeBuild can be implemented with CloudWatch, EventBridge or CodePipeline.
 
+----------
+
+### CodeDeploy
+
+#### How it works
+
+- Each EC2 Machine (or On Premise machine) must be running the CodeDeploy Agent.
+
+- The agent is continuously polling CodeDeploy for work to do.
+
+- CodeDeploy sends `appspec.yml` file.
+
+- Application is pulled from GitHub or S3.
+
+- EC2 will run the deployment instructions.
+
+- CodeDeploy Agent will report of success/failure of deployment on the instance.
+
+#### Features
+
+- EC2 instances are grouped by deployment group (dev/test/prod).
+
+- Lots of flexibility to define any kind of deployments.
+
+- CodeDeploy can be chained into CodePipeline and use artifacts from there.
+
+- CodeDeploy can re-use existing setup tools, works with any application, and even have integration with auto scaling.
+
+- Note: Blue/Green only works with EC2 instances (not on premise).
+
+- Support for AWS Lambda deploymens as well as EC2 and ECS.
+
+- CodeDeploy does NOT provision resources. We have to provision all the instances in advance.
