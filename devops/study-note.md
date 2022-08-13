@@ -159,3 +159,11 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - Support for AWS Lambda deploymens as well as EC2 and ECS.
 
 - CodeDeploy does NOT provision resources. We have to provision all the instances in advance.
+
+#### CodeDeploy and EC2
+
+- EC2 will need IAM role to access S3
+- Install CodeDeploy agent on EC2
+- Add tags so CodeDeploy knows which EC2 instance to deploy
+
+
