@@ -198,3 +198,15 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 #### Advanced options for a deployment group
 
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-configure-advanced-options.html
+
+
+#### Working with on-premises instances
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-on-premises.html
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-register.html
+
+#### Lambda Deployment Configurations
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda
+
+- AppSpec hooks for Lambda: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda
