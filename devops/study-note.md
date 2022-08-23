@@ -188,7 +188,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html
 - https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/
   - Need to install the CloudWatch Logs agent on EC2 instance
-- https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications.html
+- Monitoring deployments with Amazon SNS event notifications: https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications.html
   - CloudWatch EventBridge is external to CodeDeploy (more flexible, more options); WHILE Code Deploy's Triggers would directly interact only with Amazon SNS.
   
 #### Roll back
