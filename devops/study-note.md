@@ -166,4 +166,35 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - Install CodeDeploy agent on EC2
 - Add tags so CodeDeploy knows which EC2 instance to deploy
 
+#### Application -> Deployment Group -> Deployment
 
+- We can create Deployment Group for each environment (separated by EC2 tags)
+
+#### Deployment configuration
+
+- We can specify the percentage of healthy instances that must be available during the deployment.
+
+#### Blue/green deployment
+
+- Need EC2 Auto Scaling group
+
+#### Hooks
+
+- List of lifecycle event hooks: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server
+- Environment variable availability for hooks: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-environment-variable-availability
+
+#### Monitoring deployments with Amazon CloudWatch EventBridge
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html
+- https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/
+  - Need to install the CloudWatch Logs agent on EC2 instance
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications.html
+  - CloudWatch EventBridge is external to CodeDeploy (more flexible, more options); WHILE Code Deploy's Triggers would directly interact only with Amazon SNS.
+  
+#### Roll back
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/deployments-rollback-and-redeploy.html
+
+#### Advanced options for a deployment group
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-configure-advanced-options.html
