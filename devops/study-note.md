@@ -219,7 +219,11 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - Continuous delivery
 - Visual workflow
-- Can have parallel or sequential stages
+
+- Pipeline -> Stages -> Actions
+  - Each pipeline can have zero to many stages (sequential)
+  - Each stage can have zero to many actions (parallel or sequential)
 
 - CodeBuild artifact is different from CodePipeline artifact
   - They both use S3
+
