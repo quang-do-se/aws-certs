@@ -222,7 +222,11 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - Pipeline -> Stages -> Actions
   - Each pipeline can have zero to many stages (sequential)
-  - Each stage can have zero to many actions (parallel or sequential)
+  - Each stage can have zero to many action groups (sequential)
+  - Each action group can have zero to many actions (parallel)
+    - In code, use `runOrder` value to control action order
+
+- Pipeline structure: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html
 
 - Monitoring CodePipeline events: https://docs.aws.amazon.com/codepipeline/latest/userguide/detect-state-changes-cloudwatch-events.html#detect-state-events-pipeline
 
