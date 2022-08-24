@@ -210,3 +210,16 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda
 
 - AppSpec hooks for Lambda: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda
+
+----------
+
+### CodePipeline
+
+#### Overview
+
+- Continuous delivery
+- Visual workflow
+- Can have parallel or sequential stages
+
+- CodeBuild artifact is different from CodePipeline artifact
+  - They both use S3
