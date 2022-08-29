@@ -252,3 +252,9 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 #### Reading - Implementing GitFlow Using AWS CodePipeline, AWS CodeCommit, AWS CodeBuild, and AWS CodeDeploy
 
 - https://aws.amazon.com/blogs/devops/implementing-gitflow-using-aws-codepipeline-aws-codecommit-aws-codebuild-and-aws-codedeploy/
+
+### CodeStar
+
+The main file is `template.yml`. Use it to update your project:
+
+- https://docs.aws.amazon.com/codestar/latest/userguide/templates.html#update-project
