@@ -233,3 +233,22 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - CodeBuild artifact is different from CodePipeline artifact
   - They both use S3
 
+#### Best practices and use cases
+
+- https://docs.aws.amazon.com/codepipeline/latest/userguide/best-practices.html
+
+#### Invoke Lambda function
+
+- https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-invoke-lambda-function.html
+
+#### Create a pipeline with CloudFormation
+
+- https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-cloudformation.html
+
+#### Exercise - best practices to set up CodePipeline for production deployment
+
+- https://github.com/aws-samples/codepipeline-nested-cfn
+
+#### Reading - Implementing GitFlow Using AWS CodePipeline, AWS CodeCommit, AWS CodeBuild, and AWS CodeDeploy
+
+- https://aws.amazon.com/blogs/devops/implementing-gitflow-using-aws-codepipeline-aws-codecommit-aws-codebuild-and-aws-codedeploy/
