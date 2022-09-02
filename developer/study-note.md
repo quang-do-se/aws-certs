@@ -222,7 +222,6 @@ Outputs:
     ```
 
   - Resources (required):
-
     - Limit **200** per template
 
     - **Resources** section is the only **required** section

@@ -258,3 +258,61 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 The main file is `template.yml`. Use it to update your project:
 
 - https://docs.aws.amazon.com/codestar/latest/userguide/templates.html#update-project
+
+### Cloud Formation
+
+#### Resource types
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+
+Form 2019: `AWS::aws-product-name::data-type-name`
+
+Form 2022: `service-provider::service-name::data-type-name`
+
+#### Intrinsic Functions
+
+  - `Fn::Base64 : <valueToEncode>`: encodes value to base64
+    - It can be used to pass `UserData` script to CloudFormation.
+    - `UserData` script log is stored in `/var/log/cloud-init-output.log`.
+
+  - `Fn::FindInMap: [ MapName, TopLevelKey, SecondLevelKey ]`: gets map value
+
+  - `Fn::Cidr : [ ipBlock, count, cidrBits ]`: returns an array of CIDR address blocks
+
+  - `Fn::GetAtt: [ logicalNameOfResource, attributeName ]`: returns value of attribute from a resource in the template
+
+  - `Fn::GetAZs: <region>`: returns array of AZ in a specified region
+
+  - `Fn::ImportValue: <sharedValueToImport>`: gets output value exported by another stack
+
+  - `Fn::Join: [ delimiter, [ comma-delimited list of values ] ]`: concatenate list of values into a single string, e.g. `!Join [ ":", [ a, b, c ] ]` produces `a:b:c`
+
+  - `Fn::Split: [ delimiter, source string ]`: splits string to a list
+
+  - `Fn::Select: [ index, listOfObjects ]`: returns value at the index of the list starting with 0, e.g. `!Select [ "1", [ "apples", "grapes", "oranges", "mangoes" ] ]` returns `"grapes"`
+
+  - `Fn::Sub: [ string, [varName: varValue...] ]`: substitutes or replaces variable in string with variable value
+
+    - `{ "Fn::Sub": [ "www.${Domain}", { "Domain": {"Ref" : "RootDomainName" }} ]}`
+
+    - `!Sub 'arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:vpc/${vpc}'`
+
+  - `!Transform { "Name" : macro name, "Parameters" : {key : value, ... } }`: specifies a macro to perform custom processing on part of a stack template. Very powerful, can modify the template
+
+  - `Fn::Ref <logicalName>` or `!Ref <logicalName`: return the value of the specified *parameter* or *resource*
+
+    - Parameter: return the value of the specified parameter
+
+    - Resource: return the physical ID of the resource
+
+#### Condition functions:
+
+  - `Fn::And: [condition, ...]`
+
+  - `Fn::Equals: [value_1, value_2]`
+
+  - `Fn::If: [condition_name, value_if_true, value_if_false]`
+
+  - `Fn::Not: [condition]`
+
+  - `Fn::Or: [condition, ...]`
