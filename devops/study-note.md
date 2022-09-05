@@ -379,6 +379,8 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 
 We can use stack policy to prevent updates to resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
 
+----------
+
 ### Elastic Beanstalk
 
 #### Saved configurations
@@ -395,3 +397,16 @@ We can save non-default configurations then later import and deploy it to other 
   - Configuration Files (.ebextensions)
   - Default Values
 - Container Commands vs Commands: https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
+
+#### Version
+
+- Can have at most 1000 versions.
+- Use `Application version lifecycle settings` to get rid of old versions.
+
+#### Deployment Modes (IMPORTANT!!!)
+
+- https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+
+#### Swap Environment URLS
+
+We can swap URLs between 2 environments. It is very useful for testing. It modifies Route 53 DNS configuration so it can take some time for the change to be in place.
