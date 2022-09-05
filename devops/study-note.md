@@ -380,3 +380,8 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 We can use stack policy to prevent updates to resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
 
 ### Elastic Beanstalk
+
+#### Saved configurations
+
+We can save non-default configurations then later import and deploy it to other regions quickly.
+
