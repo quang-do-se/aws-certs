@@ -233,6 +233,9 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - CodeBuild artifact is different from CodePipeline artifact
   - They both use S3
 
+- CodeDeploy and actions could be for different regions: https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-create-cross-region.html
+  - We can have a central pipeline in one region that can deploy to mutliple regions.
+  
 #### Best practices and use cases
 
 - https://docs.aws.amazon.com/codepipeline/latest/userguide/best-practices.html
@@ -327,3 +330,8 @@ Form 2022: `service-provider::service-name::data-type-name`
 - **cfn-get-metadata**: Use to retrieve metadata for a resource or path to a specific key
 
 - **cfn-hup**: Use to check for updates to metadata and execute custom hooks when changes are detected
+
+#### ChangeSets
+
+- When you update a stack, you need to know what changes before it happens for greater confidence.
+- ChangeSets won't say if the update will be successful.
