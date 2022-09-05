@@ -385,3 +385,12 @@ We can use stack policy to prevent updates to resources: https://docs.aws.amazon
 
 We can save non-default configurations then later import and deploy it to other regions quickly.
 
+#### .ebextensions
+
+- General options for all environments: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html
+- Option settings: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions-optionsettings.html
+- Option Precedence: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
+  - Settings applied directly to the environment
+  - Saved Configurations
+  - Configuration Files (.ebextensions)
+  - Default Values
