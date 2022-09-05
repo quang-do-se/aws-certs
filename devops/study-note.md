@@ -394,3 +394,4 @@ We can save non-default configurations then later import and deploy it to other 
   - Saved Configurations
   - Configuration Files (.ebextensions)
   - Default Values
+- Container Commands vs Commands: https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
