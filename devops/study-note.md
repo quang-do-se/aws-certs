@@ -335,3 +335,23 @@ Form 2022: `service-provider::service-name::data-type-name`
 
 - When you update a stack, you need to know what changes before it happens for greater confidence.
 - ChangeSets won't say if the update will be successful.
+
+#### Parameters
+
+We can use Systems Manager's Parameters to centralize configuration values.
+
+### Public parameters
+
+You can search for AMI Linux images's parameter path with: `aws ssm get-parameters-by-path --path /aws/service/ami-amazon-linux-latest  --query 'Parameters[].Name'`
+
+#### Lambda
+
+### Inline
+
+- Cannot have dependencies.
+- Limit to 4000 characters.
+
+### Zip
+
+- We can update zip file with a `index.py` and dependencies.
+- We can use S3 versioning to reference unique version.
