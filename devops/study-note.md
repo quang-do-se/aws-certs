@@ -365,3 +365,9 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 - Continue Rolling Back (DevOps blog): https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
 - Common errors: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
 
+#### Capabilities
+
+- If you got `InsufficientCapabilitiesException`, you may need to add `CAPABILITY_IAM` or `CAPABILITY_NAMED_IAM` capability for your CloudFormation.
+
+- If you have nested stacks, you will need `CAPABILITY_AUTO_EXPAND`.
+
