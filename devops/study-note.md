@@ -262,6 +262,8 @@ The main file is `template.yml`. Use it to update your project:
 
 - https://docs.aws.amazon.com/codestar/latest/userguide/templates.html#update-project
 
+----------
+
 ### Cloud Formation
 
 #### Resource types
@@ -342,18 +344,18 @@ Form 2022: `service-provider::service-name::data-type-name`
 
 We can use Systems Manager's Parameters to centralize configuration values.
 
-### Public parameters
+#### Public parameters
 
 You can search for AMI Linux images's parameter path with: `aws ssm get-parameters-by-path --path /aws/service/ami-amazon-linux-latest  --query 'Parameters[].Name'`
 
 #### Lambda
 
-### Inline
+#### Inline
 
 - Cannot have dependencies.
 - Limit to 4000 characters.
 
-### Zip
+#### Zip
 
 - We can update zip file with a `index.py` and dependencies.
 - We can use S3 versioning to reference unique version.
@@ -362,7 +364,7 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 
 - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#cli-stack-status-codes
 
-### `UPDATE_ROLLBACK_FAILED` is a very bad state
+#### `UPDATE_ROLLBACK_FAILED` is a very bad state
 
 - Continue Rolling Back (DevOps blog): https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
 - Common errors: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
@@ -373,3 +375,6 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 
 - If you have nested stacks, you will need `CAPABILITY_AUTO_EXPAND`.
 
+#### Stack Policy
+
+We can use stack policy to prevent updates to resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
