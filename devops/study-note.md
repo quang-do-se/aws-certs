@@ -350,12 +350,12 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 
 #### Lambda
 
-#### Inline
+##### Inline
 
 - Cannot have dependencies.
 - Limit to 4000 characters.
 
-#### Zip
+##### Zip
 
 - We can update zip file with a `index.py` and dependencies.
 - We can use S3 versioning to reference unique version.
