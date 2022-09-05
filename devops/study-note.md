@@ -378,3 +378,4 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 #### Stack Policy
 
 We can use stack policy to prevent updates to resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+
