@@ -355,3 +355,13 @@ You can search for AMI Linux images's parameter path with: `aws ssm get-paramete
 
 - We can update zip file with a `index.py` and dependencies.
 - We can use S3 versioning to reference unique version.
+
+#### Stack Status Codes
+
+- https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#cli-stack-status-codes
+
+### `UPDATE_ROLLBACK_FAILED` is a very bad state
+
+- Continue Rolling Back (DevOps blog): https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
+- Common errors: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
+
