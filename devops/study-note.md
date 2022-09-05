@@ -324,12 +324,14 @@ Form 2022: `service-provider::service-name::data-type-name`
 
 - **cfn-init**: Use to retrieve and interpret resource metadata, install packages, create files, and start services
   - Logs go to `/var/log/cfn-init.log`.
+  - It's an alternative for `UserData`.
 
 - **cfn-signal**: Use to signal with a CreationPolicy or WaitCondition, so you can synchronize other resources in the stack when the prerequisite resource or application is ready
 
 - **cfn-get-metadata**: Use to retrieve metadata for a resource or path to a specific key
 
 - **cfn-hup**: Use to check for updates to metadata and execute custom hooks when changes are detected
+  - For example, when EC2 instance's metadata is updated by CloudFormation, `cfn-init` is not run again and has to be triggered by `cfn-hup`. `cfn-init` is only when stack is freshly created. This allows us to keep the same EC2 instance and just update its metadata instead of deleting it and deploying a new one.
 
 #### ChangeSets
 
