@@ -28,7 +28,7 @@ Resources:
   HelloWorldFunction:
     Properties:
       AutoPublishAlias: live
-      CodeUri: s3://aws-devops-course-stephane/da2aaee84c5991840ff7b4236b2e942b
+      CodeUri: s3://qdo-cicd-devops/fa8ffeec051ca867fd0191f5075653ba
       DeploymentPreference:
         Type: Canary10Percent10Minutes
       Events:
@@ -40,4 +40,6 @@ Resources:
       Handler: app.lambda_handler
       Runtime: python3.7
     Type: AWS::Serverless::Function
+    Metadata:
+      SamResourceId: HelloWorldFunction
 Transform: AWS::Serverless-2016-10-31
