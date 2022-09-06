@@ -26,10 +26,12 @@ curl http://127.0.0.1:3000/hello
 ```
 sam package --output-template-file packaged.yaml --s3-bucket aws-devops-course-stephane --region eu-west-1 --profile aws-devops
 
-sam package --output-template-file packaged.yaml --s3-bucket qdo-cicd-devops --region eu-west-1 --profile aws-devops
+sam package --output-template-file packaged.yaml --s3-bucket qdo-cicd-devops --profile aws-devops
 ```
 
 # Step 5 - Deploy your application
 ```
 sam deploy --template-file packaged.yaml --capabilities CAPABILITY_IAM --stack-name aws-sam-getting-started --region eu-west-1 --profile aws-devops
+
+sam deploy --template-file packaged.yaml --capabilities CAPABILITY_IAM --stack-name aws-sam-getting-started --profile aws-devops
 ```
