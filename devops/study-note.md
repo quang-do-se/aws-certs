@@ -418,3 +418,10 @@ CPU is allocated proportional to the memory configured.
 Maximum timeout is 15 minutes.
 
 Lambda is not good for long process (AWS Batch) or synchronize functions with one another (AWS Step Functions)
+
+#### SAM (Serverless Application Model)
+
+There is CLI with template to build applications.
+
+We can build and invoke lambda locally.
+
