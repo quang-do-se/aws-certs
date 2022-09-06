@@ -427,3 +427,13 @@ We can build and invoke lambda locally.
 
 SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy Lambda functions.
 
+----------
+
+### Step Functions
+
+- It helps orchestrate complex workflows.
+- It helps coordinate Lambda functions or AWS Batch jobs.
+
+#### Must read (IMPORTANT!!!)
+
+https://aws.amazon.com/step-functions/use-cases/
