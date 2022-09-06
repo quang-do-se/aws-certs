@@ -425,3 +425,5 @@ There is CLI with template to build applications.
 
 We can build and invoke lambda locally.
 
+SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy Lambda functions.
+
