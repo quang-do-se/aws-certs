@@ -437,3 +437,11 @@ SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy La
 #### Must read (IMPORTANT!!!)
 
 https://aws.amazon.com/step-functions/use-cases/
+
+----------
+
+### API Gateway
+
+- https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/
+
+- https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html
