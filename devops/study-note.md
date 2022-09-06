@@ -410,3 +410,11 @@ We can save non-default configurations then later import and deploy it to other 
 #### Swap Environment URLS
 
 We can swap URLs between 2 environments. It is very useful for testing. It modifies Route 53 DNS configuration so it can take some time for the change to be in place.
+
+### Lambda
+
+CPU is allocated proportional to the memory configured.
+
+Maximum timeout is 15 minutes.
+
+Lambda is not good for long process (AWS Batch) or synchronize functions with one another (AWS Step Functions)
