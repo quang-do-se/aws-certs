@@ -417,7 +417,11 @@ CPU is allocated proportional to the memory configured.
 
 Maximum timeout is 15 minutes.
 
-Lambda is not good for long process (AWS Batch) or synchronize functions with one another (AWS Step Functions)
+Lambda is not good for long process (AWS Batch) or synchronize functions with one another (AWS Step Functions).
+
+Lambda version is immutable. 
+
+Lambda alias is good for A/B testing and can assign weight for each version.
 
 #### SAM (Serverless Application Model)
 
@@ -445,3 +449,7 @@ https://aws.amazon.com/step-functions/use-cases/
 - https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/
 
 - https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html
+
+#### Lambda Proxy
+
+- API points to Lambda alias. It allows blue/green testing while keeping the API as is. We can modify the weigth of each version in Lambda alias.
