@@ -452,4 +452,15 @@ https://aws.amazon.com/step-functions/use-cases/
 
 #### Lambda Proxy
 
-- API points to Lambda alias. It allows blue/green testing while keeping the API as is. We can modify the weigth of each version in Lambda alias.
+- API points to Lambda alias. It allows blue/green testing while keeping the API as is. We can modify the weight of each version in Lambda alias.
+- Request details will be available in the `event` of the handler function.
+
+#### Mapping Templates
+
+- We can map both response and request in API Gateway.
+
+#### Throttling
+
+- API Gateway Account-Level: 10,000 requests per second.
+- Usage Plan: user-defined rate
+- Lambda: 1,000 concurrent requests per second
