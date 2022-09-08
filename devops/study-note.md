@@ -464,3 +464,24 @@ https://aws.amazon.com/step-functions/use-cases/
 - API Gateway Account-Level: 10,000 requests per second.
 - Usage Plan: user-defined rate
 - Lambda: 1,000 concurrent requests per second
+
+#### Trigger other AWS services
+
+- https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-api-gateway.html
+
+----------
+
+### Elastic Container Service (ECS)
+
+- EC2 instance is created with a configuration file `/etc/ecs/ecs.config`.
+
+#### Task Definitions
+
+- Task definitions are metadata in JSON form to tell ECS how to run a Docker container.
+
+- It contains crucial information about:
+  - Image Name
+  - Port Binding for Container and Host
+  - Memory and CPU required
+  - Environment variables
+  - Networking information
