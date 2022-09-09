@@ -511,3 +511,10 @@ Using Fargate helps simplify autoscaling strategy.
 - https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-ecs-ecr-codedeploy.html#tutorials-ecs-ecr-codedeploy-imagerepository
 - https://docs.aws.amazon.com/codepipeline/latest/userguide/ecs-cd-pipeline.html
 - https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/
+
+----------
+
+### OpsWorks
+
+- It's an all integrated solution for Chef Cookbooks.
+- It has stack manager, layers manager, instances manager, apps manager, monitoring tool...
