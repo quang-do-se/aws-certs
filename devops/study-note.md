@@ -518,3 +518,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 - It's an all integrated solution for Chef Cookbooks.
 - It has stack manager, layers manager, instances manager, apps manager, monitoring tool...
+
+- (IMPORTANT!!!) Need to know `OpsWorks Stacks LifeCycle Events` for exam: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-events.html
+  - `Configure` event applies to all instances when one of them goes online or offline. This could be used to configure all the instances at once and make them aware of each other.
+  - `Setup`, `Deploy`, `Undeploy`, `Shutdown` are instant specific and they can be run individually.
