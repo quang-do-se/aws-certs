@@ -489,5 +489,17 @@ https://aws.amazon.com/step-functions/use-cases/
 #### IAM Roles
 
 For ECS, there are 2 roles we need to know about:
-  - EC2 instance role (allows the ECS agent on EC2 instance to do calls againsts ECS service)
-  - Task role (for Docker containers to do its operations with AWS services such as pushing data to S3)
+- EC2 instance role (allows the ECS agent on EC2 instance to do calls againsts ECS service)
+  - This role is attached to EC2 instances.
+- Task role (for Docker containers to do its operations with AWS services such as pushing data to S3)
+- Service role (for auto scaling and load balancing)
+
+#### Scaling
+
+Scaling with ECS may be challenging since we need 2 autoscaling:
+- Service Autoscaling
+- EC2 Instance Autoscaling
+
+Using Fargate helps simplify autoscaling strategy.
+
+ECS Cluster Auto Scaling Deep Drive: https://www.youtube.com/watch?v=Fb1EwgfLbZA
