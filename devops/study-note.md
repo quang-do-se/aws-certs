@@ -504,3 +504,10 @@ Using Fargate helps simplify autoscaling strategy.
 
 `Capacity Provider` may help solve the problems with ECS autoscaling:
 - ECS Cluster Auto Scaling Deep Drive: https://www.youtube.com/watch?v=Fb1EwgfLbZA
+
+#### Workshop and tutorials (IMPORTANT!!!)
+
+- https://ecsworkshop.com/
+- https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-ecs-ecr-codedeploy.html#tutorials-ecs-ecr-codedeploy-imagerepository
+- https://docs.aws.amazon.com/codepipeline/latest/userguide/ecs-cd-pipeline.html
+- https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/
