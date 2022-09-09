@@ -497,9 +497,10 @@ For ECS, there are 2 roles we need to know about:
 #### Scaling
 
 Scaling with ECS may be challenging since we need 2 autoscaling:
-- Service Autoscaling
+- Service Autoscaling (only scaling tasks)
 - EC2 Instance Autoscaling
 
 Using Fargate helps simplify autoscaling strategy.
 
-ECS Cluster Auto Scaling Deep Drive: https://www.youtube.com/watch?v=Fb1EwgfLbZA
+`Capacity Provider` may help solve the problems with ECS autoscaling:
+- ECS Cluster Auto Scaling Deep Drive: https://www.youtube.com/watch?v=Fb1EwgfLbZA
