@@ -485,3 +485,9 @@ https://aws.amazon.com/step-functions/use-cases/
   - Memory and CPU required
   - Environment variables
   - Networking information
+
+#### IAM Roles
+
+For ECS, there are 2 roles we need to know about:
+  - EC2 instance role (allows the ECS agent on EC2 instance to do calls againsts ECS service)
+  - Task role (for Docker containers to do its operations with AWS services such as pushing data to S3)
