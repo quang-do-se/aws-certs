@@ -568,3 +568,40 @@ Using Fargate helps simplify autoscaling strategy.
   - Use DynamoDB to track other workers and share the work amongst shards.
   - Great for reading in a distributed manner.
   - Cannot have more KCL applications than SHARDS in your stream.
+
+#### Kinesis Data Firehose
+
+- Fully managed service, no admnistration
+- Near real time
+- Load data into Redshift, S3, ElastricSearch, Splunk
+- Automatic scaling
+- Data transformation through AWS Lambda (e.g. CSV -> JSON)
+
+- What can send to Kinesis Data Firehose?
+  - Kinesis Producer Library (KPL)
+  - Kinesis Agent
+  - Kinesis Data Streams
+  - CloudWatch Logs & Events
+  - IoT rules actions
+
+- Where can Kinesis Data Firehose deliver to?
+  - Amazon S3
+  - Redshift
+  - ElasticSearch
+  - Splunk
+
+#### Kinesis Data Streams vs Firehose
+
+- Streams
+  - Going to write custom code (producer / consumer)
+  - Real time (~200 ms latency for classic)
+  - Must manage scaling (shard splitting / merging)
+  - Data Storage for 1 to 7 days, replay capability, multi consumers
+  - Use with Lambda to insert data in real-time to ElasticSearch (for example)
+
+- Firehose
+  - Fully managed, send to S3, Splunk, Redshift, ElasticSearch
+  - Serverless data transformations with Lambda
+  - Near real time (lowest buffer time is 1 minute)
+  - Automated Scaling
+  - No data storage
