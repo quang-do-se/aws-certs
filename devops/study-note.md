@@ -522,3 +522,14 @@ Using Fargate helps simplify autoscaling strategy.
 - (IMPORTANT!!!) Need to know `OpsWorks Stacks LifeCycle Events` for exam: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-events.html
   - `Configure` event applies to all instances when one of them goes online or offline. This could be used to configure all the instances at once and make them aware of each other.
   - `Setup`, `Deploy`, `Undeploy`, `Shutdown` are instant specific and they can be run individually.
+
+----------
+
+### CloudTrail
+
+- Use CloudTrail to track API events. It can store logs in S3 bucket or CloudWatch log group.
+
+- Log integrity (in case of hacking): fhttps://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html
+
+- Receiving CloudTrail log files from multiple accounts: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html
+  - Need to set up S3 bucket policy to account other accounts to put logs there
