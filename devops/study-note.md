@@ -533,3 +533,38 @@ Using Fargate helps simplify autoscaling strategy.
 
 - Receiving CloudTrail log files from multiple accounts: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html
   - Need to set up S3 bucket policy to account other accounts to put logs there
+
+----------
+
+### Kinesis
+
+#### Kinesis Data Streams
+
+- Producer limits:
+  - 1MB/s or 1000 messages/s at write PER SHARD.
+  - Otherwise, you will get `ProvisionedThroughputException`.
+
+- Consumer Classis limits:
+  - 2MB/s at read PER SHARD across all consumers.
+  - 5 API calls per second PER SHARD across all consumers.
+  - For example, if we have 3 different applications and each consume 1MB/s PER SHARD, then we may get some throttling.
+
+- Data Retension:
+  - 24 hours date retentions by default.
+  - Can be extended to 7 days.
+
+- What can be Producers?
+  - Kinesis SDK
+  - CloudWatch Logs (important)
+  - Kinesis Producer Library (KPL), Kinesis Agent, Spark, Log4J Appenders, FLume, Kafka Connect, NiFi...
+
+- What can be Consumers?
+  - Kinesis SDK
+  - Kinesis Firehose
+  - AWS Lambda
+  - Kinesis Client Library (KCL), Kinesis Connector Library, Spark, Log4J Appenders, FLume, Kafka Connect...
+
+- Kinesis Client Library (KCL):
+  - Use DynamoDB to track other workers and share the work amongst shards.
+  - Great for reading in a distributed manner.
+  - Cannot have more KCL applications than SHARDS in your stream.
