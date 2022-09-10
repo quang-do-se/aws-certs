@@ -605,3 +605,19 @@ Using Fargate helps simplify autoscaling strategy.
   - Near real time (lowest buffer time is 1 minute)
   - Automated Scaling
   - No data storage
+
+----------
+
+### CloudWatch
+
+#### Metrics
+
+- `Detailed Monitoring` = every 1 minute
+  - We have to pay for `Detailed Monitoring`.
+
+- `Basic Monitoring` = every 5 minutes
+
+- Metric Retention
+  - Up to 15 months
+  - Less granularity overtime
+  - Reference: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#metrics-retention
