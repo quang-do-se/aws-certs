@@ -621,3 +621,8 @@ Using Fargate helps simplify autoscaling strategy.
   - Up to 15 months
   - Less granularity overtime
   - Reference: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#metrics-retention
+  
+- Custom metrics
+  - Standard resolution (default) = one-minute granularity
+  - High resolution = one-second granularity
+  - You can have up to 10 dimensions in one metric
