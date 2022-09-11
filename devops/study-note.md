@@ -637,3 +637,5 @@ Using Fargate helps simplify autoscaling strategy.
 - Log Groups -> Log Streams
 
 - On EC2 instance, we can install Unified CloudWatch Agent to collect more metrics such as memory usage: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
+
+- We can create `metric filters` for a log group and then create `alarms` for those `metric filters`.
