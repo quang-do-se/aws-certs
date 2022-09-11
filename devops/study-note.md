@@ -633,3 +633,7 @@ Using Fargate helps simplify autoscaling strategy.
 - It can send notification, execute auto scaling or EC2 actions.
 
 #### Logs
+
+- Log Groups -> Log Streams
+
+- On EC2 instance, we can install Unified CloudWatch Agent to collect more metrics such as memory usage: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
