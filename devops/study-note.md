@@ -626,3 +626,10 @@ Using Fargate helps simplify autoscaling strategy.
   - Standard resolution (default) = one-minute granularity
   - High resolution = one-second granularity
   - You can have up to 10 dimensions in one metric
+
+#### Alarms
+
+- An Alarm can only have 1 metric.
+- It can send notification, execute auto scaling or EC2 actions.
+
+#### Logs
