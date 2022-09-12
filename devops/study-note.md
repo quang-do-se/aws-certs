@@ -642,3 +642,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 - Real-time processing of Log Data with Subscriptions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html
   - It delivered to other services such as an `Amazon Kinesis stream`, an `Amazon Kinesis Data Firehose stream`, or `AWS Lambda` for custom processing, analysis, or loading to other systems. 
+  
+- There are 2 ways to send logs to S3: 
+  - Using AWS Event with Lambda function
+  - Using `Subscription filters`
