@@ -657,3 +657,31 @@ Using Fargate helps simplify autoscaling strategy.
 - In S3 properties, we can create `event notification` to send message to Lambda, SNS topic, or SQS queue.
   - EventBridge can have `Object Level` or `Bucket Level` Operations for S3. However for Object Level Operations to work with EventBridge, we need to have `trail(s)` in Cloud Trail that configured to received those events.
   - S3 events do not give us `Bucket Level` Operations.
+
+#### Dashboard
+
+- If the exam asks "how can you correlate date?", CloudWatch Dashboard should be your answer. (IMPORTANT!!!)
+
+----------
+
+### X-Ray
+
+- Distributed tracing, debugging
+- https://aws.amazon.com/blogs/devops/using-amazon-cloudwatch-and-amazon-sns-to-notify-when-aws-x-ray-detects-elevated-levels-of-latency-errors-and-faults-in-your-application/
+
+----------
+
+### Amazon ElasticSearch
+
+- No serverless offering
+
+- ElasticSearch + Kibana + Logstash
+  - ElasticSearch: Provide search and indexing capability
+  - Kibana: Provide real-time dashboards on top of the data sits in ES
+  - Logstash: Log ingestion mechanism
+
+----------
+
+### Tagging strategies
+
+- https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html
