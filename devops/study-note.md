@@ -639,3 +639,6 @@ Using Fargate helps simplify autoscaling strategy.
 - On EC2 instance, we can install Unified CloudWatch Agent to collect more metrics such as memory usage: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
 
 - We can create `metric filters` for a log group and then create `alarms` for those `metric filters`.
+
+- Real-time processing of Log Data with Subscriptions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html
+  - It delivered to other services such as an `Amazon Kinesis stream`, an `Amazon Kinesis Data Firehose stream`, or `AWS Lambda` for custom processing, analysis, or loading to other systems. 
