@@ -529,10 +529,13 @@ Using Fargate helps simplify autoscaling strategy.
 
 - Use CloudTrail to track API events. It can store logs in S3 bucket or CloudWatch log group.
 
-- Log integrity (in case of hacking): fhttps://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html
+- A `trail` can logs events in all AWS Regions and store those events in S3 Bucket.
+  - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html
+
+- Log integrity (in case of hacking): https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html
 
 - Receiving CloudTrail log files from multiple accounts: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html
-  - Need to set up S3 bucket policy to account other accounts to put logs there
+  - Need to set up S3 bucket policy for other accounts to put logs there
 
 ----------
 
@@ -646,3 +649,11 @@ Using Fargate helps simplify autoscaling strategy.
 - There are 2 ways to send logs to S3: 
   - Using AWS Event with Lambda function
   - Using `Subscription filters`
+
+#### EventBridge
+
+- We can use CloudTrail event to intercept custom events.
+
+- In S3 properties, we can create `event notification` to send message to Lambda, SNS topic, or SQS queue.
+  - EventBridge can have `Object Level` or `Bucket Level` Operations for S3. However for Object Level Operations to work with EventBridge, we need to have `trail(s)` in Cloud Trail that configured to received those events.
+  - S3 events do not give us `Bucket Level` Operations.
