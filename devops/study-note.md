@@ -701,3 +701,10 @@ You can use resource groups to organize your AWS resources.
 
 - Can be used to automate complex tasks
 - Build Golden AMI: https://d1.awsstatic.com/whitepapers/aws-building-ami-factory-process-using-ec2-ssm-marketplace-and-service-catalog.pdf
+
+----------
+
+### AWS Config
+
+- Audit resource compliance
+- Remediate noncompliant resources with `CloudWatch Events` or `AWS Systems Manager Automation`
