@@ -685,3 +685,19 @@ Using Fargate helps simplify autoscaling strategy.
 ### Tagging strategies
 
 - https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html
+
+----------
+
+### System Manager
+
+- Patching Automation
+
+
+#### AWS Resource Groups
+
+You can use resource groups to organize your AWS resources.
+
+#### Automation
+
+- Can be used to automate complex tasks
+- Build Golden AMI: https://d1.awsstatic.com/whitepapers/aws-building-ami-factory-process-using-ec2-ssm-marketplace-and-service-catalog.pdf
