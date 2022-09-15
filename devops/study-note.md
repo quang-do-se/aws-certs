@@ -704,7 +704,30 @@ You can use resource groups to organize your AWS resources.
 
 ----------
 
-### AWS Config
+### EC2 Instance Compliance
 
-- Audit resource compliance
-- Remediate noncompliant resources with `CloudWatch Events` or `AWS Systems Manager Automation`
+#### AWS Config
+
+- Audit and ensure resource compliance over time
+- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation`
+
+#### AWS Inspector
+
+- Security Vulnerabilities scan from within the OS using the agent (
+  - Need to manually install agent or assign the right role to allow Inspector to install agent on its own
+- Or outside network scanning (no neef for the agent)
+
+#### AWS Systems Manager
+
+- Run automations, patches, commands, inventory at scale
+
+#### AWS Service Catalog
+
+- Restrict how the EC2 instances can be launched to minimize configurations
+- Helpful to onboard beginner AWS users
+
+#### Configuration Management
+
+- AWS tools: SSM, Opsworks, Ansible, Chef, Puppet, User Data
+- Ensure the EC2 instances have proper configuration files
+
