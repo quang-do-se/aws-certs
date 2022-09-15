@@ -731,3 +731,8 @@ You can use resource groups to organize your AWS resources.
 - AWS tools: SSM, Opsworks, Ansible, Chef, Puppet, User Data
 - Ensure the EC2 instances have proper configuration files
 
+----------
+
+### Health
+
+AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-health-tools/tree/master/automated-actions/AWS_RISK_CREDENTIALS_EXPOSED
