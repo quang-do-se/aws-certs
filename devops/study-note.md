@@ -759,10 +759,28 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ### Macie
 
-- Analyze S3 for sensitive data such as Credit Cards, Personal Identifiable Information, Private Keys.
+- Analyze S3 for sensitive data such as Credit Cards, Personal Identifiable Information (PPI), Proctected Health Information (PHI), Private Keys.
 
 ----------
 
 ### AWS Secrets Manager
 
 - Easily rotate, manage, and retrieve secrets throughout their lifecycle
+
+----------
+
+### AWS License Manager
+
+- Manage license usage for Windows or Oracle...
+
+----------
+
+### Cost Allocation Tags - Billing
+
+- We can slice and dice our cost by tags, allocate our cost to different cost centers.
+
+----------
+
+### AWS Data Protection (IMPORTANT!!!)
+
+- https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16349516#overview
