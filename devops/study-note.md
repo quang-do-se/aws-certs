@@ -784,3 +784,16 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 ### AWS Data Protection (IMPORTANT!!!)
 
 - https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16349516#overview
+
+----------
+
+### Auto Scaling Group
+
+#### Launch Template
+- `Launch Template` allows a combination of On-Demand and Spot instances.
+- We can create versions for Launch Template and inherit configurations from other templates as well.
+- It is a future of AWS. We should move away from `Launch Configuration`.
+
+#### Schedule Actions
+
+- We can schedule in advance how ASG should behave.
