@@ -726,7 +726,7 @@ You can use resource groups to organize your AWS resources.
 - Restrict how the EC2 instances can be launched to minimize configurations
 - Helpful to onboard beginner AWS users
 
-#### Configuration Management
+#### Other configuration management tools
 
 - AWS tools: SSM, Opsworks, Ansible, Chef, Puppet, User Data
 - Ensure the EC2 instances have proper configuration files
@@ -736,3 +736,33 @@ You can use resource groups to organize your AWS resources.
 ### Health
 
 AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-health-tools/tree/master/automated-actions/AWS_RISK_CREDENTIALS_EXPOSED
+
+----------
+
+### Trusted Advisor
+
+- Global service - need to be in North Virginia region to create an Event.
+- Use cases: https://github.com/aws/Trusted-Advisor-Tools
+  - Can check low and high utilization EC2 
+  - Integrate with `EventBridge`, `SSM Automation` and `Lambda`
+- Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
+- Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
+
+----------
+
+### GuardDuty
+
+- Detect threat with Machine Learning
+- Use `CloudTrail Logs`, `VPC Flow Logs` and `DNS Logs`
+
+----------
+
+### Macie
+
+- Analyze S3 for sensitive data such as Credit Cards, Personal Identifiable Information, Private Keys.
+
+----------
+
+### AWS Secrets Manager
+
+- Easily rotate, manage, and retrieve secrets throughout their lifecycle
