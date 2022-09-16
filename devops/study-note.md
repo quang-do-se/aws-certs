@@ -790,10 +790,20 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 ### Auto Scaling Group
 
 #### Launch Template
+
 - `Launch Template` allows a combination of On-Demand and Spot instances.
 - We can create versions for Launch Template and inherit configurations from other templates as well.
-- It is a future of AWS. We should move away from `Launch Configuration`.
+- It is the future of ASG. We should move away from `Launch Configuration`.
 
 #### Schedule Actions
 
 - We can schedule in advance how ASG should behave.
+
+#### Dynamic Scaling Policy
+
+- Both `Target tracking scaling`, `Simple scaling`, `Step scaling` use `CloudWatch Alarm` behind the scene.
+
+#### Target Group
+
+- It takes care of health check and monitor instances.
+- It also controls attributes such as `Slow start`, `Load balancing algorithm` and `Stickiness`.
