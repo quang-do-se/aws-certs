@@ -824,3 +824,10 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 #### Lifecycle Hooks
 
 - https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function
+
+#### Termination Policies
+
+- https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html#default-termination-policy
+
+- https://aws.amazon.com/about-aws/whats-new/2015/12/protect-instances-from-termination-by-auto-scaling/
+  - For example, EC2 -> SQS. Before an EC2 instance process a message, call scale-in protection API.
