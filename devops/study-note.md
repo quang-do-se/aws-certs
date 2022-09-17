@@ -861,3 +861,29 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Elastic Search: DynamoDB Table -> DynamoDB Stream -> Lambda function -> Amazon Elastic Search
   - DynamoDB Table is good at retrieving items but bad with search (scan whole table, inefficient).
   - Elastic Search is good with searching items.
+
+----------
+
+### Multi AZ
+
+- Services where Multi-AZ must be enabled manually: 
+  - EFS, ELB, ASG, Beanstalk: assign AZ
+  - RDS, ElastiCache: multi-AZ (synchronous standby DB for failovers)
+  - Aurora: 
+    - Data is stored automatically across multi-AZ
+    - Can have multi-AZ for the DB itself (same as RDS)
+  - ElasticSearch (managed service): multi master
+  - Jenkins (self deployed): multi master
+  
+- Service where Multi-AZ is implicitly there:
+  - S3 (except OneZone-Infrequent Access)
+  - DynamoDB
+  - All of AWS' proprietary, managed services
+  
+- Elastic Block Storage (EBS)
+  - EBS is tied to a single AZ
+  - How can you make EBS `multi-AZ`?
+    - ASG with 1 min/max/desired
+    - Lifecycle hooks for `Terminate`: make a snapshot of the EBS volume
+    - Lifecycle hook for `Launch`: copy the snapshot, create an EBS, attach to instance
+    - Good for exam question **How can we move EBS volume from one region to another?**
