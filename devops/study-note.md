@@ -657,9 +657,9 @@ Using Fargate helps simplify autoscaling strategy.
   - Using AWS Event with Lambda function
   - Using `Subscription filters`
 
-#### EventBridge
+#### EventBridge and S3 (IMPORTANT!!!)
 
-- We can use CloudTrail event to intercept custom events.
+- We can use `CloudTrail` event to intercept custom events.
 
 - In S3 properties, we can create `event notification` to send message to Lambda, SNS topic, or SQS queue.
   - EventBridge can have `Object Level` or `Bucket Level` Operations for S3. However for Object Level Operations to work with EventBridge, we need to have `trail(s)` in Cloud Trail that configured to received those events.
@@ -859,5 +859,5 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 - S3 Metadata Index: S3 metadata -> Lambda -> DynamoDB -> API search
 - Elastic Search: DynamoDB Table -> DynamoDB Stream -> Lambda function -> Amazon Elastic Search
-  - DynamoDB Table is good at retrieving items but bad with search (scan whole table, inefficient)
-  - Elastic Search is good with searching items
+  - DynamoDB Table is good at retrieving items but bad with search (scan whole table, inefficient).
+  - Elastic Search is good with searching items.
