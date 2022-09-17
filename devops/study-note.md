@@ -813,3 +813,14 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 - It takes care of health check and monitor instances.
 - It also controls attributes such as `Slow start`, `Load balancing algorithm` and `Stickiness`.
+
+#### Suspend and resume a process for an Auto Scaling group (IMPORTANT!!!)
+
+- https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html?icmpid=docs_ec2as_help_panel
+- Detach instance
+- Set to StandBy
+- Set scale-in protection
+
+#### Lifecycle Hooks
+
+- https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function
