@@ -836,3 +836,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 #### CloudFormation Update
 
 - https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-group-rolling-updates/
+
+#### CodeDeploy
+
+- https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html
