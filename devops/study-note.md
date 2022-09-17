@@ -329,6 +329,7 @@ Form 2022: `service-provider::service-name::data-type-name`
   - It's an alternative for `UserData`.
 
 - **cfn-signal**: Use to signal with a CreationPolicy or WaitCondition, so you can synchronize other resources in the stack when the prerequisite resource or application is ready
+  - Need `CreationPolicy` property
 
 - **cfn-get-metadata**: Use to retrieve metadata for a resource or path to a specific key
 
