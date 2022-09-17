@@ -915,4 +915,4 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ### CodePipeline Multi Regions
 
-- https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments/
+- Hands-on: https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments/
