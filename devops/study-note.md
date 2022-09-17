@@ -887,3 +887,14 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
     - Lifecycle hooks for `Terminate`: make a snapshot of the EBS volume
     - Lifecycle hook for `Launch`: copy the snapshot, create an EBS, attach to instance
     - Good for exam question **How can we move EBS volume from one region to another?**
+
+----------
+
+### Multi Region
+
+- DynamoDB Global Tables (multi-way replication, enabled by Kinesis Streams)
+- AWS Config Aggregator (multi region & multi account)
+- RDS Cross Region Read REplicas (used for Read & Disaster Recovery)
+- Aurora Global Database (one region is master, other is for Read & Disaster Recovery)
+- EBS volumes snapshots, AMI, RDS snapshots can be copied to other regions
+- VPC peering to allow private traffic between regions
