@@ -890,7 +890,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### Multi Region
+### Multi Regions
 
 - DynamoDB Global Tables (multi-way replication, enabled by Kinesis Streams)
 - AWS Config Aggregator (multi region & multi account)
@@ -898,3 +898,21 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Aurora Global Database (one region is master, other is for Read & Disaster Recovery)
 - EBS volumes snapshots, AMI, RDS snapshots can be copied to other regions
 - VPC peering to allow private traffic between regions
+- Route53 uses a global network of DNS servers
+- S3 Cross Region Replication
+- CloudFront for Global CDN at the Edge Locations
+- Lambda@Edge for Global Lambda function at Edge Locations (A/B testing)
+
+----------
+
+### CloudFormation `StackSets`
+
+- Create, update, or delete stacks across multiple accounts and regions with a single operation
+
+- Permissions needed: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html
+
+----------
+
+### CodePipeline Multi Regions
+
+- https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments/
