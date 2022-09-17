@@ -832,3 +832,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 - https://aws.amazon.com/about-aws/whats-new/2015/12/protect-instances-from-termination-by-auto-scaling/
   - For example, EC2 -> SQS. Before an EC2 instance process a message, call scale-in protection API.
+
+#### CloudFormation Update
+
+- https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-group-rolling-updates/
