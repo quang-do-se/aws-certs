@@ -494,6 +494,12 @@ For ECS, there are 2 roles we need to know about:
 - Task role (for Docker containers to do its operations with AWS services such as pushing data to S3)
 - Service role (for auto scaling and load balancing)
 
+#### Load Balancer and Security Group
+
+- For dynamic port feature (multiple containers on the same EC2 instances), because we don't know what ports will be used on EC2 instances, we need to add an `inbound rules` for EC2 instances that allows all ports from Load Balancer's security group to EC2 instances.
+
+- **NOTE**: Security Groups are STATEFUL.
+
 #### Scaling
 
 Scaling with ECS may be challenging since we need 2 autoscaling:
