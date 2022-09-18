@@ -824,6 +824,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 #### Lifecycle Hooks
 
+- https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks-overview.html
 - https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function
 
 #### Termination Policies
@@ -905,6 +906,13 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
+### Multi Accounts
+
+- https://aws.amazon.com/blogs/architecture/stream-amazon-cloudwatch-logs-to-a-centralized-account-for-audit-and-analysis/
+- https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html
+
+----------
+
 ### CloudFormation `StackSets`
 
 - Create, update, or delete stacks across multiple accounts and regions with a single operation
@@ -980,7 +988,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 - EFS Backup:
   - AWS Backup with EFS (frequency, when, retain time, lifecycle policy) - managed
-  - EFS to EFS backup (maybe obsolete with AWS Backup): https://github.com/aws-solutions/efs-backup
+  - EFS to EFS backup (maybe obsolete with AWS Backup): https://aws.amazon.com/solutions/implementations/efs-to-efs-backup-solution/
   - Multi-region idea: EFS -> S3 -> S3 CRR -> EFS
   
 - Route53 Backup:
