@@ -916,3 +916,76 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 ### CodePipeline Multi Regions
 
 - Hands-on: https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments/
+
+----------
+
+### Disaster Recoverty
+
+#### Objectives
+
+- `RPO`: Recovery Point Objective
+- `RTO`: Recovery Time Objective
+- The smaller these are, the higher the cost
+
+#### Strategies
+
+- Backup and Restore
+  - Very easy and cheap
+  - High RPO and High RTO
+- Pilot Light
+  - Backup and replicate the critical core systems only
+  - Manage costs
+- Warm Standby
+  - Full system is up and running, but at minimum size
+  - More costly but reduce RPO & RTO
+- Hot Site / Multi Site Approach
+  - Full Production Scale is running on AWS and on-premises
+  - Very low RTO, very expensive
+
+#### Tips
+
+- Backup
+  - EBS Snapshots, RDS Automated backups/Snapshots, etc...
+  - Regular pushes to S3 / S3 IA / Glacier, Lifecycle Policy, Cross Region Replication
+  - From On-Premise: Snowball or Storage Gateway
+  
+- High Availability
+  - Use Route53 to migrate DNS over from Region to Region
+  - RSD Multi-AZ, ElastiCache Multi-AZ, EFS, S3
+  - Site to Site VPN as a recovery from Direct Connect
+  
+- Replication
+  - RDS Replication (Cross Region), AWS Aurora + Global Databases
+  - Database replication from on-premise to RDS
+  - Storage Gateway
+
+- Automation
+  - CloudFormation / Elastic Beanstalk to re-create a whole new environment
+  - Recover / Reboot EC2 instances with CloudWatch if alarms fail
+  - AWS Lambda functions for customized automations
+
+- Chaos
+  - Netflix has a "simian-army" randomly terminating EC2 (chaos testing in production)
+
+#### Multi-Region Disaster Recovery Checklist
+
+- Is my AMI copied? Is it stored in the parameter store?
+- Is my CloudFormation StackSet working and tested to work in another region?
+- What's my RPO and RTO and cost associated with it?
+- Are Route53 Health Checks working correctly? Tied to a CW Alarm?
+- How can I automate with CloudWatch Events to trigger some Lambda functions and perform a RDS Read Replication promotion?
+- Is my data backed up? Where is my data living? How is it synchronized? How is it replicated?
+
+#### Backups
+
+- EFS Backup:
+  - AWS Backup with EFS (frequency, when, retain time, lifecycle policy) - managed
+  - EFS to EFS backup (maybe obsolete with AWS Backup): https://github.com/aws-solutions/efs-backup
+  - Multi-region idea: EFS -> S3 -> S3 CRR -> EFS
+  
+- Route53 Backup:
+  - Use `ListResourceRecordSets` API for exports
+  - Write your own scripts for imports into R53 or other DNS provider
+  
+- Elastice Beanstalk Backup:
+  - Saved configurations using the EB CLI or AWS console.
