@@ -1,9 +1,21 @@
+# Exam tips
+
+Ignore "You do not have to do anything" answer. It will always be wrong.
+
+"You want to focus on the simplest, most technically correct answer."
+
+We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
+
+----------
+
+# Domain 1
+
 CodeBuild
-  buildspec.yml
+  - buildspec.yml
 
 CodeDeploy hooks
-  `appspec` file can be YML or JSON
-
+  - `appspec` file can be YML or JSON.
+  - List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
 
 
 Lambda time out after 15 minutes?
@@ -31,11 +43,4 @@ Focus on IAM solution
 `CodeBuild Triggers` allow you to schedule automated builds every hour, day, week or custom time.
 
 
-
-# Exam tips
-
-Ignore "You do not have to do anything" answer. It will always be wrong.
-
-"You want to focus on the simplest, most technically correct answer."
-
-We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
+(IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
