@@ -117,7 +117,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - Environment variables in build environments: https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
 - AWS CodeBuild resources and operations: https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
 - Validating AWS CodeCommit Pull Requests with AWS CodeBuild and AWS Lambda: https://aws.amazon.com/blogs/devops/validating-aws-codecommit-pull-requests-with-aws-codebuild-and-aws-lambda/
-
+- Automating your API testing with AWS CodeBuild, AWS CodePipeline, and Postman: https://aws.amazon.com/blogs/devops/automating-your-api-testing-with-aws-codebuild-aws-codepipeline-and-postman/
 #### Good points
 
 - It's better to have Docker login early in `pre_build` phase so we don't have to waste time building an image if the login fails. Fail fast is better.
