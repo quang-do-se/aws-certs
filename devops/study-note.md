@@ -102,7 +102,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - CloudWatch Events and Lambda can be used as a blue between CodeBuild and other services.
 
-- CodeBuild can sent notifications to SNS using CodeBuild triggers.
+- CodeBuild can sent notifications to SNS using `CodeBuild triggers`.
 
 #### Lambda vs. CodeBuild
 
@@ -118,6 +118,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - AWS CodeBuild resources and operations: https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
 - Validating AWS CodeCommit Pull Requests with AWS CodeBuild and AWS Lambda: https://aws.amazon.com/blogs/devops/validating-aws-codecommit-pull-requests-with-aws-codebuild-and-aws-lambda/
 - Automating your API testing with AWS CodeBuild, AWS CodePipeline, and Postman: https://aws.amazon.com/blogs/devops/automating-your-api-testing-with-aws-codebuild-aws-codepipeline-and-postman/
+
 #### Good points
 
 - It's better to have Docker login early in `pre_build` phase so we don't have to waste time building an image if the login fails. Fail fast is better.
@@ -180,7 +181,8 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 #### Hooks
 
-- List of lifecycle event hooks: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-server
+- List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
+
 - Environment variable availability for hooks: https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-environment-variable-availability
 
 #### Monitoring deployments with Amazon CloudWatch EventBridge
@@ -252,7 +254,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - https://github.com/aws-samples/codepipeline-nested-cfn
 
-#### Reading - Implementing GitFlow Using AWS CodePipeline, AWS CodeCommit, AWS CodeBuild, and AWS CodeDeploy
+#### Reading - Implementing GitFlow Using AWS CodePipeline, AWS CodeCommit, AWS CodeBuild, and AWS CodeDeploy (IMPORTANT!!!)
 
 - https://aws.amazon.com/blogs/devops/implementing-gitflow-using-aws-codepipeline-aws-codecommit-aws-codebuild-and-aws-codedeploy/
 
