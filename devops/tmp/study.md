@@ -33,6 +33,7 @@ SQS size limit is 256KB
 
 To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
 
+CodeCommit's AWS manage policy `AWSCodeCommitPowerUser` allow users access to all the functionality of CodeCommit but it does NOT allow them to delete or create repositories.
 
 Focus on IAM solution
 
