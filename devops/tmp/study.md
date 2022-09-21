@@ -10,6 +10,13 @@ When routing **portions of users**, always choose Amazon Route 53.
 
 ----------
 
+# Review
+
+- CloudFormation Helper Scripts
+- Lambda SAM Framework
+
+----------
+
 # Domain 1
 
 CodeBuild
@@ -49,6 +56,8 @@ Focus on IAM solution
 
 (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
+----------
+
 # Domain 2
 
 `WaitCondtion` vs `CreationPolicy`
@@ -77,3 +86,9 @@ OpsWorks layers:
   - Load Balancer layer
   - Application Server layer
   - Database layer
+
+OpsWork automatic instance scaling options:
+  - With automatic load-based scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
+  - With automatic time-based scaling, you can define at what time of the day instances will be started and stopped.
+
+`SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
