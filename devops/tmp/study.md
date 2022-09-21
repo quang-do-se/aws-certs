@@ -67,3 +67,9 @@ Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/d
 We cannot set timed cutovers with `Route 53`.
 
 We cannot use `Elastic Beanstalk` to migrate our applications. We can't import or export environments with `Elastic Beanstalk`.
+We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
+
+OpsWorks layers:
+  - Load Balancer layer
+  - Application Server layer
+  - Database layer
