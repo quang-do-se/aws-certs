@@ -45,3 +45,9 @@ Focus on IAM solution
 
 
 (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+
+# Domain 2
+
+`WaitCondtion` vs `CreationPolicy`
+  - `WaitCondition` is a resource.
+  - `CreationPolicy` is an attribute.
