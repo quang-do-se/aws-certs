@@ -54,10 +54,11 @@ Focus on IAM solution
 `WaitCondtion` vs `CreationPolicy`
   - `WaitCondition` is a resource.
   - `CreationPolicy` is an attribute.
+  - The `CreationPolicy` is recommended for `EC2` and `Auto Scaling`.
 
 We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
 
-Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
+In CloudFormation, Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created. The `Stack Policy` is the IAM style policy statement which governs what can be changed and who can change it.
 
 (IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
   - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
