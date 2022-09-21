@@ -21,7 +21,8 @@ When routing **portions of users**, always choose Amazon Route 53.
 
 CodeBuild
   - buildspec.yml
-
+  - https://aws.amazon.com/blogs/devops/validating-aws-codecommit-pull-requests-with-aws-codebuild-and-aws-lambda/
+  
 CodeDeploy hooks
   - `appspec` file can be YML or JSON.
   - List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
