@@ -19,6 +19,7 @@ CodeDeploy hooks
   - `appspec` file can be YML or JSON.
   - List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
 
+CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
 Lambda time out after 15 minutes?
 
@@ -53,6 +54,8 @@ Focus on IAM solution
 `WaitCondtion` vs `CreationPolicy`
   - `WaitCondition` is a resource.
   - `CreationPolicy` is an attribute.
+
+We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
 
 Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
 
