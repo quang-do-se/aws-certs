@@ -56,4 +56,7 @@ Focus on IAM solution
 
 Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
 
+(IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
+  - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
+  
 
