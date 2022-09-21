@@ -6,6 +6,8 @@ Ignore "You do not have to do anything" answer. It will always be wrong.
 
 We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
 
+When routing **portions of users**, always choose Amazon Route 53.
+
 ----------
 
 # Domain 1
@@ -51,3 +53,7 @@ Focus on IAM solution
 `WaitCondtion` vs `CreationPolicy`
   - `WaitCondition` is a resource.
   - `CreationPolicy` is an attribute.
+
+Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
+
+
