@@ -58,5 +58,12 @@ Updates to all resources are open by default but `Stack Policy` changes to DENY 
 
 (IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
   - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
-  
 
+Empty S3 can always be rolled back.
+
+Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
+  - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
+  
+We cannot set timed cutovers with `Route 53`.
+
+We cannot use `Elastic Beanstalk` to migrate our applications. We can't import or export environments with `Elastic Beanstalk`.
