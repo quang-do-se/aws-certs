@@ -8,6 +8,8 @@ We wanna automate all aspects of our environment. We wanna use that infrastructu
 
 When routing **portions of users**, always choose Amazon Route 53.
 
+When you see a question about reporting on an API call, that's likely to be `AWS CloudTrail`.
+
 ----------
 
 # Review
@@ -93,3 +95,11 @@ OpsWork automatic instance scaling options:
   - With automatic time-based scaling, you can define at what time of the day instances will be started and stopped.
 
 `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
+
+----------
+
+# Domain 3
+
+- Metric Retention
+  - Metric is kept for a period of 15 months
+  - Less granularity overtime
