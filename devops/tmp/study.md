@@ -8,7 +8,7 @@ We wanna automate all aspects of our environment. We wanna use that infrastructu
 
 When routing **portions of users**, always choose Amazon Route 53.
 
-When you see a question about reporting on an API call, that's likely to be `AWS CloudTrail`.
+When you see a question about reporting on API calls or logs, that's likely to be `AWS CloudTrail`.
 
 ----------
 
@@ -16,6 +16,8 @@ When you see a question about reporting on an API call, that's likely to be `AWS
 
 - CloudFormation Helper Scripts
 - Lambda SAM Framework
+- EventBridge 
+  - Event bus
 
 ----------
 
@@ -103,3 +105,14 @@ OpsWork automatic instance scaling options:
 - Metric Retention
   - Metric is kept for a period of 15 months
   - Less granularity overtime
+
+CloudWatch Events Rules will match incoming events and route them to the target.
+  - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
+  
+Cloudwatch Metrics are grouped into namespaces.
+
+When the requirement is to process streaming data in real time, `Kinesis` must be strongly considered. "Real time" usually points to `Kinesis`.
+
+`Kinesis Data Streams` is a low latency streaming service in AWS Kinesis with the facility for ingesting at scale. On the other hand, `Kinesis Firehose` aims to serve as a data transfer service.
+
+The primary purpose of `Kinesis Firehose` focuses on loading streaming data to Amazon S3, Splunk, ElasticSearch, and RedShift. 
