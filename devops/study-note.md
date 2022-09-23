@@ -709,7 +709,7 @@ You can use resource groups to organize your AWS resources.
 #### Automation
 
 - Can be used to automate complex tasks
-- Build Golden AMI: https://d1.awsstatic.com/whitepapers/aws-building-ami-factory-process-using-ec2-ssm-marketplace-and-service-catalog.pdf
+- Build Golden AMI (IMPORTANT!!!): https://d1.awsstatic.com/whitepapers/aws-building-ami-factory-process-using-ec2-ssm-marketplace-and-service-catalog.pdf
 
 ----------
 

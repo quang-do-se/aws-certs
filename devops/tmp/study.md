@@ -129,7 +129,8 @@ Optimize cost through automation.
 
 `IAM`
   - Users are permanent set of credentials
-  - Roles are temporary credentials
+  - Roles are temporary credentials and NOT something we need to rotate because it happens automatically behind the scenes.
+  - Cannot apply restriction conditions on root account
 
 `Security Group`
   - Stateful
@@ -148,3 +149,15 @@ Data protection: at rest
   - Amazon EBS either server side or host
   - Amazon Glacier is by default
   - Amazon EFS supports encryption only thru AWS KMS
+
+`GuardDuty`:
+  - CloudTrail events
+  - VPC Flow Logs
+  - DNS Query Logs
+
+`Secrets Manager` has additional charges compared to `Parameter Store`.
+
+`AWS Trusted Advisor` provides guidance to help you:
+  - Reduce cost
+  - Increase performance
+  - Improve security
