@@ -10,6 +10,10 @@ When routing **portions of users**, always choose Amazon Route 53.
 
 When you see a question about reporting on API calls or logs, that's likely to be `AWS CloudTrail`.
 
+Use `Roles` everywhere you can. Avoid permanent security credentials.
+
+If you see the phrase **Network Instrusion Detection**, you should think of `Amazon GuardDuty`.
+
 ----------
 
 # Review
@@ -116,3 +120,31 @@ When the requirement is to process streaming data in real time, `Kinesis` must b
 `Kinesis Data Streams` is a low latency streaming service in AWS Kinesis with the facility for ingesting at scale. On the other hand, `Kinesis Firehose` aims to serve as a data transfer service.
 
 The primary purpose of `Kinesis Firehose` focuses on loading streaming data to Amazon S3, Splunk, ElasticSearch, and RedShift. 
+
+----------
+
+# Domain 4
+
+Optimize cost through automation.
+
+`IAM`
+  - Users are permanent set of credentials
+  - Roles are temporary credentials
+
+`Security Group`
+  - Stateful
+  - For **Instance** level
+
+`Network Access Control List (NACLs)`
+  - Stateless
+  - For **Subnet** level
+
+Data protection: at rest
+  - Amazon S3 server side encryption
+    - SSE-S3: encrypts using keys handled & managed by AWS
+    - SSE-KMS: encrypts using keys handled & managed by KMS
+    - SSE-C: encrypts using keys handled & managed by Customer
+    - Can be enabled by default (manually)
+  - Amazon EBS either server side or host
+  - Amazon Glacier is by default
+  - Amazon EFS supports encryption only thru AWS KMS
