@@ -131,6 +131,7 @@ Optimize cost through automation.
   - Users are permanent set of credentials
   - Roles are temporary credentials and NOT something we need to rotate because it happens automatically behind the scenes.
   - Cannot apply restriction conditions on root account
+  - Clean up IAM users for those who left
 
 `Security Group`
   - Stateful
