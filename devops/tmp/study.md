@@ -179,6 +179,9 @@ When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, a
 
 If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
 
+
+`EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
+
 ----------
 
 # Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
