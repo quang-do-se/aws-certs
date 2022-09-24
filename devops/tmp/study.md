@@ -123,7 +123,7 @@ The primary purpose of `Kinesis Firehose` focuses on loading streaming data to A
 
 ----------
 
-# Domain 4
+# Domain 4 - Policies and Standards Automation
 
 Optimize cost through automation.
 
@@ -165,8 +165,18 @@ Data protection: at rest
   
 ----------
 
-# Domain 5
+# Domain 5 - Incident and Event Response
 
 You can't delete a `Load Balancer` if deletion protection is enabled.
 
 Auto Scaling `detach` and `standby` mode are different.
+
+Route 53 routing policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html
+
+Amazon Aurora can have up to 15 replicas.
+
+When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
+
+----------
+
+# Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
