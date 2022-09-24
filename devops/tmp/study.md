@@ -185,3 +185,7 @@ If a `CloudFormation` stack has failed because of one resource, you can set the 
 ----------
 
 # Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
+
+Which health checks can an Auto Scaling group use to determine the health of its instances?
+  - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
+  - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
