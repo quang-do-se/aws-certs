@@ -758,12 +758,19 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
 - Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
 
+
+`AWS Trusted Advisor` provides guidance to help you:
+  - Reduce cost
+  - Increase performance
+  - Improve security
+  
 ----------
 
 ### GuardDuty
 
-- Detect threat with Machine Learning
-- Continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in S3. 
+- `GuardDuty` is a threat detection service that continuously monitors your AWS accounts and workloads for malicious activity and delivers detailed security findings for visibility and remediation.
+- It detects threat with Machine Learning.
+- Continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in S3.
 - Use `CloudTrail Logs`, `VPC Flow Logs` and `DNS Logs`
 
 ----------
