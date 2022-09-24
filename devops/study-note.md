@@ -700,7 +700,7 @@ Using Fargate helps simplify autoscaling strategy.
 ### System Manager
 
 - Patching Automation
-
+- Need to install `SSM Agent` on instances for Systems Manager to update, manage, and configure these resources.
 
 #### AWS Resource Groups
 
