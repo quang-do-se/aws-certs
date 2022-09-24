@@ -177,6 +177,8 @@ Amazon Aurora can have up to 15 replicas.
 
 When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
 
+If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
+
 ----------
 
 # Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
