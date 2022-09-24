@@ -724,7 +724,7 @@ You can use resource groups to organize your AWS resources.
 
 - Security Vulnerabilities scan from within the OS using the agent (
   - Need to manually install agent or assign the right role to allow Inspector to install agent on its own
-- Or outside network scanning (no neef for the agent)
+- Or outside network scanning (no need for the agent)
 
 #### AWS Systems Manager
 
@@ -762,6 +762,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 ### GuardDuty
 
 - Detect threat with Machine Learning
+- Continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in S3. 
 - Use `CloudTrail Logs`, `VPC Flow Logs` and `DNS Logs`
 
 ----------
