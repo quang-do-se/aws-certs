@@ -725,6 +725,7 @@ You can use resource groups to organize your AWS resources.
 - Security Vulnerabilities scan from within the OS using the agent (
   - Need to manually install agent or assign the right role to allow Inspector to install agent on its own
 - Or outside network scanning (no need for the agent)
+- `Inspector` automatically discovers and scans Amazon EC2 instances and container images in ECR for software vulnerabilities and unintended network exposure.
 
 #### AWS Systems Manager
 
@@ -769,7 +770,8 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ### Macie
 
-- Analyze S3 for sensitive data such as Credit Cards, Personal Identifiable Information (PPI), Proctected Health Information (PHI), Private Keys.
+- Analyze S3 for sensitive data such as Credit Cards, `Personal Identifiable Information (PPI)`, `Proctected Health Information (PHI)`, Private Keys.
+- Applies machine learning and pattern matching techniques to S3 buckets to identify sensitive data.
 
 ----------
 
