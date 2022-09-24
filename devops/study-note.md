@@ -824,7 +824,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Set to StandBy
 - Set scale-in protection
 
-#### Lifecycle Hooks
+#### Lifecycle Hooks (IMPORTANT!!!)
 
 - https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks-overview.html
 - https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function

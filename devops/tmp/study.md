@@ -162,3 +162,11 @@ Data protection: at rest
   - Reduce cost
   - Increase performance
   - Improve security
+  
+----------
+
+# Domain 5
+
+You can't delete a `Load Balancer` if deletion protection is enabled.
+
+Auto Scaling `detach` and `standby` mode are different.
