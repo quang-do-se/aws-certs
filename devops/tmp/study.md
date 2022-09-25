@@ -67,6 +67,13 @@ Focus on IAM solution
 
 `Code Commit` can trigger Lambda directly.
 
+
+Control access with `aws:ResourceTag/<tag-key>` in IAM pocily:
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html
+  - `ec2:ResourceTag/<tag-key>` will work for EC2 instance
+  - User and Role can also have tags and can be accessed with `"${aws:PrincipalTag/<tag-key>}"`
+
 ----------
 
 # Domain 2 - Configuration Management and Infrastructure as Code

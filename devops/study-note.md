@@ -409,6 +409,7 @@ We can save non-default configurations then later import and deploy it to other 
 #### Deployment Modes (IMPORTANT!!!)
 
 - https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16108261#overview
 
 #### Swap Environment URLS
 
