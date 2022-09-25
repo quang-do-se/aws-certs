@@ -76,6 +76,7 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
 
 For distributed load testing:
   - It's better to use Fargate and ECS to scale for each test scenario
+  - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
 
 ----------
 
@@ -117,6 +118,11 @@ OpsWork automatic instance scaling options:
 CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
 
 In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
+
+EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
+  - `Cluster Placement Groups` are recommended for applications that benefit from low network latency, high network throughput, or both.
+  - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
+  - `Spread Placement Groups` are recommended for applications that have a small number of critical instances that should be kept separate from each other.
 
 ----------
 
