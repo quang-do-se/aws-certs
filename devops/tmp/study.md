@@ -102,6 +102,10 @@ OpsWork automatic instance scaling options:
 
 `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
 
+CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
+
+In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
+
 ----------
 
 # Domain 3
@@ -189,3 +193,4 @@ If a `CloudFormation` stack has failed because of one resource, you can set the 
 Which health checks can an Auto Scaling group use to determine the health of its instances?
   - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
   - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
+
