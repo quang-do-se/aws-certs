@@ -444,6 +444,7 @@ SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy La
 #### Must read (IMPORTANT!!!)
 
 https://aws.amazon.com/step-functions/use-cases/
+https://docs.aws.amazon.com/step-functions/latest/dg/sfn-best-practices.html
 
 ----------
 

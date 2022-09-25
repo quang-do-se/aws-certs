@@ -25,7 +25,7 @@ If you see the phrase **Network Instrusion Detection**, you should think of `Ama
 
 ----------
 
-# Domain 1
+# Domain 1 - SDLC Automation
 
 CodeBuild
   - buildspec.yml
@@ -65,9 +65,11 @@ Focus on IAM solution
 
 (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
+`Code Commit` can trigger Lambda directly.
+
 ----------
 
-# Domain 2
+# Domain 2 - Configuration Management and Infrastructure as Code
 
 `WaitCondtion` vs `CreationPolicy`
   - `WaitCondition` is a resource.
