@@ -124,6 +124,8 @@ EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placem
   - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
   - `Spread Placement Groups` are recommended for applications that have a small number of critical instances that should be kept separate from each other.
 
+In `CloudFormation`, `Intrinsic functions` can not be used within the Parameters section.
+
 ----------
 
 # Domain 3
