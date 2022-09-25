@@ -74,6 +74,9 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
   - `ec2:ResourceTag/<tag-key>` will work for EC2 instance
   - User and Role can also have tags and can be accessed with `"${aws:PrincipalTag/<tag-key>}"`
 
+For distributed load testing:
+  - It's better to use Fargate and ECS to scale for each test scenario
+
 ----------
 
 # Domain 2 - Configuration Management and Infrastructure as Code
