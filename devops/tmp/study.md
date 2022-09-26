@@ -77,6 +77,8 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
 For distributed load testing:
   - It's better to use Fargate and ECS to scale for each test scenario
   - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
+  
+`CodeBuild` NamespaceType can add `BUILD_ID` into artifact path: https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectArtifacts.html#CodeBuild-Type-ProjectArtifacts-namespaceType
 
 ----------
 
