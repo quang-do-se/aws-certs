@@ -409,7 +409,7 @@ We can save non-default configurations then later import and deploy it to other 
 #### Deployment Modes (IMPORTANT!!!)
 
 - https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
-https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16108261#overview
+- https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16108261#overview
 
 #### Swap Environment URLS
 
@@ -665,9 +665,10 @@ Using Fargate helps simplify autoscaling strategy.
 
 - We can use `CloudTrail` event to intercept custom events.
 
-- In S3 properties, we can create `event notification` to send message to Lambda, SNS topic, or SQS queue.
-  - EventBridge can have `Object Level` or `Bucket Level` Operations for S3. However for Object Level Operations to work with EventBridge, we need to have `trail(s)` in Cloud Trail that configured to received those events.
-  - S3 events do not give us `Bucket Level` Operations.
+- In S3 properties, we can create `Event Notification` to send message to Lambda, SNS topic, or SQS queue.
+  - S3 `Event Notification` do not give us `Bucket Level` Operations.
+  - `EventBridge` can have `Object Level` or `Bucket Level` Operations for S3. However for `Object Level` Operations to work with `EventBridge`, we need to have `trail(s)` in `Cloud Trail` that configured to received those events.
+
 
 #### Dashboard
 
