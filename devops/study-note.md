@@ -516,6 +516,10 @@ Using Fargate helps simplify autoscaling strategy.
 `Capacity Provider` may help solve the problems with ECS autoscaling:
 - ECS Cluster Auto Scaling Deep Drive: https://www.youtube.com/watch?v=Fb1EwgfLbZA
 
+#### X-Ray Deamon
+
+- https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html
+
 #### Workshop and tutorials (IMPORTANT!!!)
 
 - https://ecsworkshop.com/
@@ -679,6 +683,7 @@ Using Fargate helps simplify autoscaling strategy.
 ### X-Ray
 
 - Distributed tracing, debugging
+- https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html
 - https://aws.amazon.com/blogs/devops/using-amazon-cloudwatch-and-amazon-sns-to-notify-when-aws-x-ray-detects-elevated-levels-of-latency-errors-and-faults-in-your-application/
 
 ----------
@@ -788,6 +793,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 ### AWS Secrets Manager
 
 - Easily rotate, manage, and retrieve secrets throughout their lifecycle
+- Secret value size: 65,536 Bytes
 
 ----------
 
