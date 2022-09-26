@@ -184,6 +184,7 @@ Outputs:
   - Parameters (optional):
 
     - Does not allow conditions
+    - `Intrinsic functions` can not be used within the `Parameters` section
 
   - Mappings:
 
