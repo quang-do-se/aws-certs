@@ -446,6 +446,7 @@ SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy La
 
 https://aws.amazon.com/step-functions/use-cases/
 https://docs.aws.amazon.com/step-functions/latest/dg/sfn-best-practices.html
+https://docs.aws.amazon.com/step-functions/latest/dg/concepts-input-output-filtering.html
 
 ----------
 
@@ -587,6 +588,8 @@ Using Fargate helps simplify autoscaling strategy.
   - Great for reading in a distributed manner.
   - Cannot have more KCL applications than SHARDS in your stream.
 
+- Troubleshooting Consumers: https://docs.aws.amazon.com/streams/latest/dev/troubleshooting-consumers.html#w4aac23c27b5
+
 #### Kinesis Data Firehose
 
 - Fully managed service, no admnistration
@@ -623,6 +626,10 @@ Using Fargate helps simplify autoscaling strategy.
   - Near real time (lowest buffer time is 1 minute)
   - Automated Scaling
   - No data storage
+
+#### Good reads
+
+- https://aws.amazon.com/blogs/big-data/create-real-time-clickstream-sessions-and-run-analytics-with-amazon-kinesis-data-analytics-aws-glue-and-amazon-athena/
 
 ----------
 

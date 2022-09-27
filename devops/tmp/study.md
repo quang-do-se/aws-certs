@@ -205,7 +205,6 @@ When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, a
 
 If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
 
-
 `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
 ----------
@@ -216,3 +215,10 @@ Which health checks can an Auto Scaling group use to determine the health of its
   - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
   - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
 
+
+In `CloudFormation`, to protect resources against update and deletion, use:
+``` yaml
+"DeletionPolicy" : "Retain",
+"UpdateReplacePolicy" : "Retain"
+```
+Also, use `Change Set` to preview the effects of the changes before executing.
