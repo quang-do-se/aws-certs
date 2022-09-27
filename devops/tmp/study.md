@@ -222,3 +222,6 @@ In `CloudFormation`, to protect resources against update and deletion, use:
 "UpdateReplacePolicy" : "Retain"
 ```
 Also, use `Change Set` to preview the effects of the changes before executing.
+
+`DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
+- https://aws.amazon.com/dynamodb/global-tables/
