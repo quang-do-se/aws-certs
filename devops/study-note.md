@@ -736,7 +736,8 @@ You can use resource groups to organize your AWS resources.
 
 - Audit and ensure resource compliance over time
 - Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation`
-
+  - https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig. Need to know different Event Types. (IMPORTANT!!!) 
+  
 #### AWS Inspector
 
 - Security Vulnerabilities scan from within the OS using the agent (

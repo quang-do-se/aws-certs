@@ -83,6 +83,8 @@ For distributed load testing:
   
 `CodeBuild` NamespaceType can add `BUILD_ID` into artifact path: https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectArtifacts.html#CodeBuild-Type-ProjectArtifacts-namespaceType
 
+An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
+
 ----------
 
 # Domain 2 - Configuration Management and Infrastructure as Code
