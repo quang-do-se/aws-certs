@@ -774,10 +774,12 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
 
 
-`AWS Trusted Advisor` provides guidance to help you:
-  - Reduce cost
-  - Increase performance
-  - Improve security
+`AWS Trusted Advisor` provides guidance for FIVE check categories:
+  - Cost optimization
+  - Performance
+  - Security
+  - Fault tolerance
+  - Service limits
   
 ----------
 
