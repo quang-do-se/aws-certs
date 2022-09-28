@@ -121,6 +121,8 @@ CloudFormation `custom resources` allow you to extend CloudFOrmation to do thing
 
 In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
 
+CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
+
 EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
   - `Cluster Placement Groups` are recommended for applications that benefit from low network latency, high network throughput, or both.
   - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
