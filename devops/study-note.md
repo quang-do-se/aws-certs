@@ -553,6 +553,8 @@ Using Fargate helps simplify autoscaling strategy.
 - Receiving CloudTrail log files from multiple accounts: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html
   - Need to set up S3 bucket policy for other accounts to put logs there
 
+- CloudTrail logs can take up to 15 minutes to record an event.
+
 ----------
 
 ### Kinesis
@@ -902,6 +904,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 - Services where Multi-AZ must be enabled manually: 
   - EFS, ELB, ASG, Beanstalk: assign AZ
   - RDS, ElastiCache: multi-AZ (synchronous standby DB for failovers)
+    - The secondary instance in a multi-AZ RDS is a hot standby and not available for reads or writes.
   - Aurora: 
     - Data is stored automatically across multi-AZ
     - Can have multi-AZ for the DB itself (same as RDS)

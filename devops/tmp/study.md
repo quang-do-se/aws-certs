@@ -45,6 +45,8 @@ CloudFormation does not detect a new file has been uploaded to S3 unless one of 
 
 SQS size limit is 256KB
   - Files must be uploaded to S3 and a reference to them should be sent to SQS.
+ 
+AWS KMS can encrypt data only up to 4 KB in size.
 
 `Continuous Delivery` phase requires manual approval step. `Continuous Integration` and `Continuous Deployment` are fully automated.
   - https://aws.amazon.com/devops/continuous-integration/
@@ -67,6 +69,7 @@ Focus on IAM solution
 
 `Code Commit` can trigger Lambda directly.
 
+`Code Commit` supports IAM policies only.
 
 Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in IAM pocily:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
