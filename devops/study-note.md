@@ -906,6 +906,8 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
   - EFS, ELB, ASG, Beanstalk: assign AZ
   - RDS, ElastiCache: multi-AZ (synchronous standby DB for failovers)
     - The secondary instance in a multi-AZ RDS is a hot standby and not available for reads or writes.
+    - RDS snapshots are taken against the secondary instance.
+    - Automated snapshots are created once per day only.
   - Aurora: 
     - Data is stored automatically across multi-AZ
     - Can have multi-AZ for the DB itself (same as RDS)
