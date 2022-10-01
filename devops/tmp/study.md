@@ -118,7 +118,8 @@ In CloudFormation, Updates to all resources are open by default but `Stack Polic
   - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
   
 
-An empty S3 can be rolled back.
+Delete `CloudFormation` stack fails
+  - Some resources must be empty before they can be deleted. For example, you must delete all objects in an Amazon S3 bucket or remove all instances in an Amazon EC2 security group before you can delete the bucket or security group.
 
 
 Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
