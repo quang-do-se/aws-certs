@@ -96,44 +96,64 @@ An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can 
   - `CreationPolicy` is an attribute.
   - The `CreationPolicy` is recommended for `EC2` and `Auto Scaling`.
 
+
 We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
+
 
 In CloudFormation, Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created. The `Stack Policy` is the IAM style policy statement which governs what can be changed and who can change it.
 
+
 (IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
   - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
+  
+  
+(IMPORTANT!!!) https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
+  - For example, `AWS::RDS::DBInstance`'s `Port` attribute has the update requirement of `Replacement`. That means when the `Port` value is changed, the database will be replaced. The database will have to be restored from backups.
+  - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
+  
 
-Empty S3 can always be rolled back.
+An empty S3 can be rolled back.
+
 
 Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
   - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
-  
+
+
 We cannot set timed cutovers with `Route 53`.
+
 
 We cannot use `Elastic Beanstalk` to migrate our applications. We can't import or export environments with `Elastic Beanstalk`.
 We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
+
 
 OpsWorks layers:
   - Load Balancer layer
   - Application Server layer
   - Database layer
 
+
 OpsWork automatic instance scaling options:
   - With automatic load-based scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
   - With automatic time-based scaling, you can define at what time of the day instances will be started and stopped.
 
+
 `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
+
 
 CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
 
+
 In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
 
+
 CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
+
 
 EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
   - `Cluster Placement Groups` are recommended for applications that benefit from low network latency, high network throughput, or both.
   - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
   - `Spread Placement Groups` are recommended for applications that have a small number of critical instances that should be kept separate from each other.
+
 
 In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
 
