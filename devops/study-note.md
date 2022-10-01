@@ -207,6 +207,8 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-on-premises.html
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/on-premises-instances-register.html
 
+- Note: Deployment groups are defined by tags, not by the registration of instance IDs.
+
 #### Lambda Deployment Configurations
 
 - https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda
@@ -706,6 +708,15 @@ Using Fargate helps simplify autoscaling strategy.
   - ElasticSearch: Provide search and indexing capability
   - Kibana: Provide real-time dashboards on top of the data sits in ES
   - Logstash: Log ingestion mechanism
+
+- When an instance is launched, Elastic Beanstalk runs `preinit`, `appdeploy`, and `postinit`, in this order.
+  - https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platform-hooks.html
+  
+- `commands`: You can use the `commands` key to execute commands on the EC2 instance. The commands run before the application and web server are set up and the application version file is extracted.
+
+- `container_commands`: You can use the `container_commands` key to execute commands that affect your application source code. Container commands run after the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed. 
+
+- `Container Commands` vs `Commands`? https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
 
 ----------
 
