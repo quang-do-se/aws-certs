@@ -679,8 +679,8 @@ Using Fargate helps simplify autoscaling strategy.
 - We can use `CloudTrail` event to intercept custom events.
 
 - In S3 properties, we can create `Event Notification` to send message to Lambda, SNS topic, or SQS queue.
-  - S3 `Event Notification` do not give us `Object Level` Operations.
-  - `EventBridge` can have `object-level` or `bucket-level` Operations for S3. By default, it tracks `bucket-level` actions. However for `object-level` operations to work with `EventBridge`, we need to have `trail(s)` in `Cloud Trail` that configured to received those events (enable data events).
+  - S3 `Event Notification` tracks `object-level` operations.
+  - `EventBridge` can track `object-level` or `bucket-level` operations for S3. By default, it tracks `bucket-level` actions. However for `object-level` operations to work with `EventBridge`, we need to have `trail(s)` in `Cloud Trail` that configured to received those events (enable data events).
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging-s3-info.html#cloudtrail-object-level-tracking
 
 
