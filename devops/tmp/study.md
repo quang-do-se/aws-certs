@@ -30,12 +30,18 @@ If you see the phrase **Network Instrusion Detection**, you should think of `Ama
 CodeBuild
   - buildspec.yml
   - Validating AWS CodeCommit Pull Requests with AWS CodeBuild and AWS Lambda: https://github.com/aws-samples/aws-codecommit-pull-request-aws-codebuild
-  
+
+
 CodeDeploy hooks
   - `appspec` file can be YML or JSON.
   - List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
 
+
 CodeCommit notification vs trigger???
+  - Notifications should be used for literal notification and not for taking action based on them.
+  - Triggers are supposed to initiate action. So, if I need to invoke some service based on this event on which trigger is based, I would do that and hence the option to integrate Lambda service. In a way to add automation after codecommit events.
+    - Triggers are more limited in scope: Push to existing branch, create branch or tag, delete branch or tag.
+
 
 CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
