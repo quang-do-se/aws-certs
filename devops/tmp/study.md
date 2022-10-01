@@ -35,6 +35,8 @@ CodeDeploy hooks
   - `appspec` file can be YML or JSON.
   - List of lifecycle event hooks (IMPORTANT!!!): https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#reference-appspec-file-structure-hooks-list
 
+CodeCommit notification vs trigger???
+
 CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
 Lambda time out after 15 minutes?
