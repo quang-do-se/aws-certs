@@ -61,7 +61,7 @@ CodeCommit's AWS manage policy `AWSCodeCommitPowerUser` allow users access to al
 Focus on IAM solution
 
 
-`AWS CodeStart` and `template.yml`
+`AWS CodeStart`: The main file is `template.yml`.
 
 
 `CodeBuild Triggers` allow you to schedule automated builds every hour, day, week or custom time.
