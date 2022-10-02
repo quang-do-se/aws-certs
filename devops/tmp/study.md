@@ -205,17 +205,28 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ### Route 53
 
-We cannot set timed cutovers with `Route 53`.
+- We cannot set timed cutovers with `Route 53`.
+
+- (IMPORTANT!!!) Route 53 routing policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html
+  - Simple routing policy
+  - Failover routing policy (important for multiple AWS Regions and Disaster Recovery)
+  - Geolocation routing policy
+  - Geoproximity routing policy
+  - Latency routing policy (important for multiple AWS Regions and Disaster Recovery)
+  - IP-based routing policy
+  - Multivalue answer routing policy
+  - Weighted routing policy 
 
 ----------
 
 ### OpsWork
 
+- Support Chef and Puppet
+
 - OpsWorks layers:
   - Load Balancer layer
   - Application Server layer
   - Database layer
-
 
 - OpsWork automatic instance scaling options:
   - With automatic `load-based` scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
@@ -225,8 +236,10 @@ We cannot set timed cutovers with `Route 53`.
 
 ### Load Balancer
 
-Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
+- Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
   - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
+
+- You can't delete a `Load Balancer` if deletion protection is enabled.
 
 ----------
 
@@ -270,11 +283,34 @@ Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/d
 
 ----------
 
+### Trusted Advisor
+
+- Global service - need to be in North Virginia region to create an Event.
+- Use cases: https://github.com/aws/Trusted-Advisor-Tools
+  - Can check low and high utilization EC2 
+  - Integrate with `EventBridge`, `SSM Automation` and `Lambda`
+- Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
+- Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
 
 
+- `AWS Trusted Advisor` provides guidance for **FIVE** check categories:
+  - Cost optimization
+  - Performance
+  - Security
+  - Fault tolerance
+  - Service limits
 
+----------
 
+### GuardDuty
 
+- `GuardDuty` is a threat detection service that continuously monitors your AWS accounts, workloads for malicious activity and delivers detailed security findings for visibility and remediation.
+- Gain insight of compromised credentials, unusual data access in Amazon S3, API calls from known malicious IP addresses.
+- It detects threat with Machine Learning.
+- Track:
+  - `CloudTrail Logs`
+  - `VPC Flow Logs`
+  - `DNS Query Logs`
 
 Data protection: at rest
   - Amazon S3 server side encryption
@@ -286,47 +322,87 @@ Data protection: at rest
   - Amazon Glacier is by default
   - Amazon EFS supports encryption only thru AWS KMS
 
-`GuardDuty`:
-  - CloudTrail events
-  - VPC Flow Logs
-  - DNS Query Logs
+----------
 
-`Secrets Manager` has additional charges compared to `Parameter Store`.
+### Secrets Manager
 
-`AWS Trusted Advisor` provides guidance to help you:
-  - Reduce cost
-  - Increase performance
-  - Improve security
+- `Secrets Manager` has additional charges compared to `Parameter Store`.
+
   
 ----------
 
+### Auto Scaling Group
 
+- Template
+  - `Launch Template` allows a combination of On-Demand and Spot instances.
+  - We can create versions for Launch Template and inherit configurations from other templates as well.
+  - It is the future of ASG. We should move away from `Launch Configuration`.
 
-You can't delete a `Load Balancer` if deletion protection is enabled.
+-  Schedule Actions
+  - We can schedule in advance how ASG should behave.
 
-Auto Scaling `detach` and `standby` mode are different.
+- Dynamic Scaling Policy
+  - Both `Target tracking scaling`, `Simple scaling`, `Step scaling` use `CloudWatch Alarm` behind the scene.
 
-Route 53 routing policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html
+- Target Group
+  - It takes care of health check and monitor instances.
+  - It also controls attributes such as `Slow start`, `Load balancing algorithm` and `Stickiness`.
 
-Amazon Aurora can have up to 15 replicas.
+- (IMPORTANT!!!) Types of processes that can be suspended and resumed for an Auto Scaling group
+  - https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html?icmpid=docs_ec2as_help_panel#process-types
+  
+- Auto Scaling `detach` and `standby` mode are different.
+  - Detach instance
+  - Set to StandBy
 
-When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
+- (IMPORTANT!!!) ASG Lifecycle Hooks 
+  - https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks-overview.html
+  - https://docs.aws.amazon.com/autoscaling/ec2/userguide/warm-pool-instance-lifecycle.html#lifecycle-state-transitions
+  - https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function
 
-If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
+- Termination Policies
+  - https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html#default-termination-policy
 
-`EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
+- Scale-in Protection
+  - https://aws.amazon.com/about-aws/whats-new/2015/12/protect-instances-from-termination-by-auto-scaling/
+    - For example, EC2 -> SQS. Before an EC2 instance process a message, call scale-in protection API.
 
-----------
+- CloudFormation Update
+  - https://aws.amazon.com/premiumsupport/knowledge-center/auto-scaling-group-rolling-updates/
 
+- CodeDeploy
+  - https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html
 
-
-Which health checks can an Auto Scaling group use to determine the health of its instances?
+- Which health checks can an Auto Scaling group use to determine the health of its instances?
   - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
   - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
 
+- `RetainResource`
+  - If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
 
+----------
 
-`DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
-- https://aws.amazon.com/dynamodb/global-tables/
+### AWS Security Hub 
+
+- When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
+
+----------
+
+### Aurora
+
+- Amazon Aurora can have up to 15 replicas.
+
+----------
+
+### `EventBridge`
+
+- `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
+
+----------
+
+### DynamoDB
+
+- `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
+  - https://aws.amazon.com/dynamodb/global-tables/
 
 
