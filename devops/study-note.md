@@ -396,11 +396,13 @@ We can save non-default configurations then later import and deploy it to other 
 
 - General options for all environments: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html
 - Option settings: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions-optionsettings.html
-- Option Precedence: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
+
+- (IMPORTANT!!!) Option Precedence: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
   - Settings applied directly to the environment
   - Saved Configurations
   - Configuration Files (.ebextensions)
   - Default Values
+  
 - Container Commands vs Commands: https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
 
 #### Version
@@ -752,7 +754,7 @@ You can use resource groups to organize your AWS resources.
   
 #### AWS Inspector
 
-- Security Vulnerabilities scan from within the OS using the agent (
+- Security Vulnerabilities scan from within the OS using the agent
   - Need to manually install agent or assign the right role to allow Inspector to install agent on its own
 - Or outside network scanning (no need for the agent)
 - `Inspector` automatically discovers and scans Amazon EC2 instances and container images in ECR for software vulnerabilities and unintended network exposure.

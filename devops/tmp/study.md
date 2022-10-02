@@ -261,3 +261,10 @@ Also, use `Change Set` to preview the effects of the changes before executing.
 
 `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
 - https://aws.amazon.com/dynamodb/global-tables/
+
+
+#### EBS vs. EFS vs. S3
+
+- `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
+- `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
+- `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
