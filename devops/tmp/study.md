@@ -42,6 +42,8 @@ Focus on IAM solution (maybe).
 
 - CodeCommit's AWS manage policy `AWSCodeCommitPowerUser` allow users access to all the functionality of CodeCommit but it does NOT allow them to delete or create repositories.
 
+----------
+
 ### CodeBuild
 
 - `buildspec.yml`
@@ -56,6 +58,7 @@ Focus on IAM solution (maybe).
 
 - `CodeBuild` NamespaceType can add `BUILD_ID` into artifact path: https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectArtifacts.html#CodeBuild-Type-ProjectArtifacts-namespaceType
 
+----------
 
 ### CodeDeploy
 
@@ -65,47 +68,63 @@ Focus on IAM solution (maybe).
 
 - CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
+----------
+
 ### AWS Batch
 
 - AWS Batch has a delay of an hour?
+
+----------
 
 ### CodeStart
 
 - The main file is `template.yml`.
 
+----------
 
 ### CodePipeline
 
 - `Continuous Delivery` phase requires manual approval step. `Continuous Integration` and `Continuous Deployment` are fully automated.
   - https://aws.amazon.com/devops/continuous-integration/
 
+----------
+
 ### CloudFormation
 
 - CloudFormation does not detect a new file has been uploaded to `S3` unless one of these parameters change: - S3Bucket - S3Key (filename) - S3ObjectVersion
+
+----------
 
 ### SQS
 
 - SQS size limit is 256KB
   - Files must be uploaded to S3 and a reference to them should be sent to SQS.
- 
+
+----------
+
 ### KMS
 
 - AWS KMS can encrypt data only up to 4 KB in size.
 
+----------
 
 ### Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
 
 - For distributed load testing:
-  - It's better to use Fargate and ECS to scale for each test scenario
+  - It's better to use `Fargate` and `ECS` to scale for each test scenario
   - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
 
+- An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
+
+----------
 
 ### ElasticBeanstalk
 
 - (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
+----------
 
 ### IAM
 
@@ -115,9 +134,6 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
   - `ec2:ResourceTag/<tag-key>` will work for EC2 instance
   - User and Role can also have tags and can be accessed with `"${aws:PrincipalTag/<tag-key>}"`
 
-  
-
-An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
 
 ----------
 
