@@ -28,6 +28,13 @@ Focus on IAM solution (maybe).
 ----------
 
 # Domain 1 - SDLC Automation
+# Domain 2 - Configuration Management and Infrastructure as Code
+# Domain 3 - Monitoring and Logging
+# Domain 4 - Policies and Standards Automation
+# Domain 5 - Incident and Event Response
+# Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
+
+----------
 
 ### CodeCommit
 
@@ -46,7 +53,8 @@ Focus on IAM solution (maybe).
 
 ### CodeBuild
 
-- `buildspec.yml`
+- (IMPORTANT!!!) `buildspec.yml`
+  - https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-syntax
 
 - Validating AWS CodeCommit Pull Requests with AWS CodeBuild and AWS Lambda: https://github.com/aws-samples/aws-codecommit-pull-request-aws-codebuild
 
@@ -93,6 +101,16 @@ Focus on IAM solution (maybe).
 
 - CloudFormation does not detect a new file has been uploaded to `S3` unless one of these parameters change: - S3Bucket - S3Key (filename) - S3ObjectVersion
 
+- `WaitCondtion` vs `CreationPolicy`
+  - `WaitCondition` is a resource.
+  - `CreationPolicy` is an attribute.
+  - The `CreationPolicy` is recommended for `EC2` and `Auto Scaling`.
+
+- We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
+
+- In CloudFormation, updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
+The `Stack Policy` is the IAM style policy statement which governs what can be changed and who can change it.
+
 ----------
 
 ### SQS
@@ -122,7 +140,7 @@ Focus on IAM solution (maybe).
 
 ### ElasticBeanstalk
 
-- (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+- (IMPORTANT!!!) Deployment methods: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
 ----------
 
@@ -137,18 +155,13 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
 
 ----------
 
-# Domain 2 - Configuration Management and Infrastructure as Code
-
-`WaitCondtion` vs `CreationPolicy`
-  - `WaitCondition` is a resource.
-  - `CreationPolicy` is an attribute.
-  - The `CreationPolicy` is recommended for `EC2` and `Auto Scaling`.
 
 
-We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
 
 
-In CloudFormation, Updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created. The `Stack Policy` is the IAM style policy statement which governs what can be changed and who can change it.
+
+
+
 
 
 (IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
@@ -208,7 +221,7 @@ In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameter
 
 ----------
 
-# Domain 3 - Monitoring and Logging
+
 
 - Metric Retention
   - Metric is kept for a period of 15 months
@@ -227,7 +240,7 @@ The primary purpose of `Kinesis Firehose` focuses on loading streaming data to A
 
 ----------
 
-# Domain 4 - Policies and Standards Automation
+
 
 Optimize cost through automation.
 
@@ -269,7 +282,7 @@ Data protection: at rest
   
 ----------
 
-# Domain 5 - Incident and Event Response
+
 
 You can't delete a `Load Balancer` if deletion protection is enabled.
 
@@ -287,7 +300,7 @@ If a `CloudFormation` stack has failed because of one resource, you can set the 
 
 ----------
 
-# Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
+
 
 Which health checks can an Auto Scaling group use to determine the health of its instances?
   - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
