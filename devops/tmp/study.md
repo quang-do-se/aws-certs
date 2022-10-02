@@ -266,9 +266,6 @@ We can't bring in resources that aren't previously created utilizing the Elastic
   - Metric is kept for a period of 15 months
   - Less granularity overtime
 
-- CloudWatch Events Rules will match incoming events and route them to the target.
-  - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
-  
 - Cloudwatch Metrics are grouped into `namespaces`.
 
 ----------
@@ -401,6 +398,9 @@ Data protection: at rest
 ## EventBridge
 
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
+
+- Events Rules will match incoming events and route them to the target.
+  - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
 
 ----------
 
