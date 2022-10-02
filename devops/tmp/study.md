@@ -80,12 +80,6 @@
 
 ----------
 
-## AWS Batch
-
-- AWS Batch has a delay of an hour?
-
-----------
-
 ## CodeStart
 
 - The main file is `template.yml`.
@@ -156,21 +150,6 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 ## KMS
 
 - AWS KMS can encrypt data only up to 4 KB in size.
-
-----------
-
-## Misc.
-
-- To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
-
-- For distributed load testing:
-  - It's better to use `Fargate` and `ECS` to scale for each test scenario
-  - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
-
-- EBS vs. EFS vs. S3
-  - `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
-  - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
-  - `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
 
 ----------
 
@@ -419,4 +398,19 @@ Data protection: at rest
 - `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
   - https://aws.amazon.com/dynamodb/global-tables/
 
+----------
 
+## Misc.
+
+- To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
+
+- For distributed load testing:
+  - It's better to use `Fargate` and `ECS` to scale for each test scenario
+  - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
+
+- `EBS` vs. `EFS` vs. `S3`
+  - `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
+  - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
+  - `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
+
+- AWS Batch has a delay of an hour?
