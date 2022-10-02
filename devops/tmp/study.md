@@ -16,7 +16,9 @@
 
 - Focus on IAM solution (maybe).
 
-- Optimize cost through automation.
+- Automation is key.
+  - The solution must Optimize cost.
+  - The solution must automatically apply to new instance and new region.
 
 ----------
 
