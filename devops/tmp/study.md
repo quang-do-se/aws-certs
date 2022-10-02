@@ -136,6 +136,14 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
 
+- In `CloudFormation`, to protect resources against update and deletion, use:
+``` yaml
+"DeletionPolicy" : "Retain",
+"UpdateReplacePolicy" : "Retain"
+```
+
+- Use `Change Set` to preview the effects of the changes before executing.
+
 ----------
 
 ### SQS
@@ -161,6 +169,11 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
 
+- EBS vs. EFS vs. S3
+  - `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
+  - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
+  - `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
+
 ----------
 
 ### ElasticBeanstalk
@@ -174,11 +187,18 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ### IAM
 
-Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in IAM pocily:
+- Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in IAM pocily:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html
   - `ec2:ResourceTag/<tag-key>` will work for EC2 instance
   - User and Role can also have tags and can be accessed with `"${aws:PrincipalTag/<tag-key>}"`
+
+- `Users` are permanent set of credentials.
+- `Roles` are temporary credentials and NOT something we need to rotate because it happens automatically behind the scenes.
+
+- Cannot apply restriction conditions on root account.
+
+- Always clean up IAM users for those who left.
 
 
 ----------
@@ -212,11 +232,18 @@ Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/d
 
 ### EC2
 
-
-EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
+- EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
   - `Cluster Placement Groups` are recommended for applications that benefit from low network latency, high network throughput, or both.
   - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
   - `Spread Placement Groups` are recommended for applications that have a small number of critical instances that should be kept separate from each other.
+
+- `Security Group`
+  - Stateful
+  - For **Instance** level
+
+- `Network Access Control List (NACLs)`
+  - Stateless
+  - For **Subnet** level
 
 ----------
 
@@ -247,19 +274,7 @@ EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placem
 
 
 
-`IAM`
-  - Users are permanent set of credentials
-  - Roles are temporary credentials and NOT something we need to rotate because it happens automatically behind the scenes.
-  - Cannot apply restriction conditions on root account
-  - Clean up IAM users for those who left
 
-`Security Group`
-  - Stateful
-  - For **Instance** level
-
-`Network Access Control List (NACLs)`
-  - Stateless
-  - For **Subnet** level
 
 Data protection: at rest
   - Amazon S3 server side encryption
@@ -310,19 +325,8 @@ Which health checks can an Auto Scaling group use to determine the health of its
   - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
 
 
-In `CloudFormation`, to protect resources against update and deletion, use:
-``` yaml
-"DeletionPolicy" : "Retain",
-"UpdateReplacePolicy" : "Retain"
-```
-Also, use `Change Set` to preview the effects of the changes before executing.
 
 `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
 - https://aws.amazon.com/dynamodb/global-tables/
 
 
-#### EBS vs. EFS vs. S3
-
-- `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
-- `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
-- `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
