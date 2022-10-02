@@ -167,8 +167,6 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
   - It's better to use `Fargate` and `ECS` to scale for each test scenario
   - https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/
 
-- An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
-
 - EBS vs. EFS vs. S3
   - `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
   - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
@@ -401,6 +399,18 @@ Data protection: at rest
 
 - Events Rules will match incoming events and route them to the target.
   - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
+
+- Message size: 256 KB
+
+----------
+
+## SNS
+
+- Support **FAN-OUT** pattern.
+
+- Message size: 256 KB
+
+- An `EC2` instance cannot subscribe to an `SNS` message. A `Lambda` function can subscribe to an `SNS` message.
 
 ----------
 
