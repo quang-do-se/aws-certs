@@ -16,6 +16,8 @@ If you see the phrase **Network Instrusion Detection**, you should think of `Ama
 
 Focus on IAM solution (maybe).
 
+Optimize cost through automation.
+
 ----------
 
 # Review
@@ -111,6 +113,29 @@ Focus on IAM solution (maybe).
 - In CloudFormation, updates to all resources are open by default but `Stack Policy` changes to DENY for all resources once created.
 The `Stack Policy` is the IAM style policy statement which governs what can be changed and who can change it.
 
+- (IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
+  - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
+
+- (IMPORTANT!!!) https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
+  - For example, `AWS::RDS::DBInstance`'s `Port` attribute has the update requirement of `Replacement`. That means when the `Port` value is changed, the database will be replaced. The database will have to be restored from backups.
+  - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
+
+- Troubleshooting "Delete `CloudFormation` stack fails"
+  - Some resources must be empty before they can be deleted. For example, you must delete all objects in an Amazon S3 bucket or remove all instances in an Amazon EC2 security group before you can delete the bucket or security group.
+
+- `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
+
+
+- CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
+
+
+- In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
+
+
+- CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
+
+- In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
+
 ----------
 
 ### SQS
@@ -142,6 +167,9 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - (IMPORTANT!!!) Deployment methods: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
+- We cannot use `Elastic Beanstalk` to migrate our applications. We cannot import or export environments with `Elastic Beanstalk`.
+We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
+
 ----------
 
 ### IAM
@@ -155,60 +183,34 @@ Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in I
 
 ----------
 
-
-
-
-
-
-
-
-
-
-(IMPORTANT!!!) UPDATE_ROLLBACK_FAILED in CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
-  - https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
-  
-  
-(IMPORTANT!!!) https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
-  - For example, `AWS::RDS::DBInstance`'s `Port` attribute has the update requirement of `Replacement`. That means when the `Port` value is changed, the database will be replaced. The database will have to be restored from backups.
-  - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
-  
-
-Delete `CloudFormation` stack fails
-  - Some resources must be empty before they can be deleted. For example, you must delete all objects in an Amazon S3 bucket or remove all instances in an Amazon EC2 security group before you can delete the bucket or security group.
-
-
-Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
-  - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
-
+### Route 53
 
 We cannot set timed cutovers with `Route 53`.
 
+----------
 
-We cannot use `Elastic Beanstalk` to migrate our applications. We can't import or export environments with `Elastic Beanstalk`.
-We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
+### OpsWork
 
-
-OpsWorks layers:
+- OpsWorks layers:
   - Load Balancer layer
   - Application Server layer
   - Database layer
 
 
-OpsWork automatic instance scaling options:
-  - With automatic load-based scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
-  - With automatic time-based scaling, you can define at what time of the day instances will be started and stopped.
+- OpsWork automatic instance scaling options:
+  - With automatic `load-based` scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
+  - With automatic `time-based` scaling, you can define at what time of the day instances will be started and stopped.
+  
+----------
 
+### Load Balancer
 
-`SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
+Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
+  - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
 
+----------
 
-CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
-
-
-In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
-
-
-CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
+### EC2
 
 
 EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
@@ -216,33 +218,34 @@ EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placem
   - `Partition Placement Groups` help reduce the likelihood of correlated hardware failures for your application.
   - `Spread Placement Groups` are recommended for applications that have a small number of critical instances that should be kept separate from each other.
 
-
-In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
-
 ----------
 
-
+### CloudWatch
 
 - Metric Retention
   - Metric is kept for a period of 15 months
   - Less granularity overtime
 
-CloudWatch Events Rules will match incoming events and route them to the target.
+- CloudWatch Events Rules will match incoming events and route them to the target.
   - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
   
-Cloudwatch Metrics are grouped into namespaces.
+- Cloudwatch Metrics are grouped into `namespaces`.
 
-When the requirement is to process streaming data in real time, `Kinesis` must be strongly considered. "Real time" usually points to `Kinesis`.
+----------
 
-`Kinesis Data Streams` is a low latency streaming service in AWS Kinesis with the facility for ingesting at scale. On the other hand, `Kinesis Firehose` aims to serve as a data transfer service.
+### Kinesis
 
-The primary purpose of `Kinesis Firehose` focuses on loading streaming data to Amazon S3, Splunk, ElasticSearch, and RedShift. 
+- When the requirement is to process streaming data in real time, `Kinesis` must be strongly considered. "Real time" usually points to `Kinesis`.
+
+- `Kinesis Data Streams` is a low latency streaming service in AWS Kinesis with the facility for ingesting at scale. On the other hand, `Kinesis Firehose` aims to serve as a data transfer service.
+
+- The primary purpose of `Kinesis Firehose` focuses on loading streaming data to Amazon S3, Splunk, ElasticSearch, and RedShift. 
 
 ----------
 
 
 
-Optimize cost through automation.
+
 
 `IAM`
   - Users are permanent set of credentials
