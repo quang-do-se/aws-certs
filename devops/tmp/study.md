@@ -1,22 +1,22 @@
 ## Exam tips
 
-Ignore "You do not have to do anything" answer. It will always be wrong.
+- Ignore "You do not have to do anything" answer. It will always be wrong.
 
-"You want to focus on the simplest, most technically correct answer."
+- "You want to focus on the simplest, most technically correct answer."
 
-We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
+- We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
 
-When routing **portions of users**, always choose Amazon Route 53.
+- When routing **portions of users**, always choose Amazon Route 53.
 
-When you see a question about reporting on API calls or logs, that's likely to be `AWS CloudTrail`.
+- When you see a question about reporting on API calls or logs, that's likely to be `AWS CloudTrail`.
 
-Use `Roles` everywhere you can. Avoid permanent security credentials.
+- Use `Roles` everywhere you can. Avoid permanent security credentials.
 
-If you see the phrase **Network Instrusion Detection**, you should think of `Amazon GuardDuty`.
+- If you see the phrase **Network Instrusion Detection**, you should think of `Amazon GuardDuty`.
 
-Focus on IAM solution (maybe).
+- Focus on IAM solution (maybe).
 
-Optimize cost through automation.
+- Optimize cost through automation.
 
 ----------
 
