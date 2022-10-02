@@ -352,10 +352,10 @@ Data protection: at rest
   - https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html?icmpid=docs_ec2as_help_panel#process-types
   
 - `Detach` and `Standby` are different.
-  - Detach instance will remove an instance from ASG.
+  - Detach instance will remove an instance from ASG. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html)
     - ASG will scale out if the minimum capacity is the same.
     - The instance can be attached to a different ASG.
-  - Put an instance into `StandBy` state.
+  - Put an instance into `StandBy` state. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html)
     - Instances that are on `Standby` are still part of the ASG, but they do not actively handle load balancer traffic.
     - This feature helps you stop and start the instances or reboot them without worrying about ASG terminating the instances as part of its health checks or during scale-in events.
 
