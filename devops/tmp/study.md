@@ -406,12 +406,12 @@ Data protection: at rest
 
 - Audit and ensure resource compliance over time
 
-- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation`
+- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation` in Rules' settings.
 
 - (IMPORTANT!!!) Event Types in Config: https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig
   - **Config Configuration Item Change** vs. **Config Rules Compliance Change**
 
-- SNS Topic is used for the whole config. There is no SNS notification at Rule level.
+- SNS Topic is used for the whole Config (for operational insights). There is no SNS notification at Rule level. You should use `CloudWatch Events` for Rules.
 
 ----------
 
