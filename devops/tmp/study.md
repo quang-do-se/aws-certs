@@ -402,6 +402,19 @@ Data protection: at rest
 
 ----------
 
+## AWS Config
+
+- Audit and ensure resource compliance over time
+
+- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation`
+
+- (IMPORTANT!!!) Event Types in Config: https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig
+  - **Config Configuration Item Change** vs. **Config Rules Compliance Change**
+
+- SNS Topic is used for the whole config. There is no SNS notification at Rule level.
+
+----------
+
 ## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
