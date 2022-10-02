@@ -1,4 +1,4 @@
-# Exam tips
+## Exam tips
 
 Ignore "You do not have to do anything" answer. It will always be wrong.
 
@@ -20,7 +20,7 @@ Optimize cost through automation.
 
 ----------
 
-# Review
+## Review
 
 - CloudFormation Helper Scripts
 - Lambda SAM Framework
@@ -29,16 +29,16 @@ Optimize cost through automation.
 
 ----------
 
-# Domain 1 - SDLC Automation
-# Domain 2 - Configuration Management and Infrastructure as Code
-# Domain 3 - Monitoring and Logging
-# Domain 4 - Policies and Standards Automation
-# Domain 5 - Incident and Event Response
-# Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
+## Domain 1 - SDLC Automation
+## Domain 2 - Configuration Management and Infrastructure as Code
+## Domain 3 - Monitoring and Logging
+## Domain 4 - Policies and Standards Automation
+## Domain 5 - Incident and Event Response
+## Domain 6 - High Availability, Fault Tolerance, and Disaster Recovery
 
 ----------
 
-### CodeCommit
+## CodeCommit
 
 - CodeCommit `Notification` vs `Trigger`
   - Notifications should be used for literal notification and not for taking action based on them.
@@ -53,7 +53,7 @@ Optimize cost through automation.
 
 ----------
 
-### CodeBuild
+## CodeBuild
 
 - (IMPORTANT!!!) `buildspec.yml`
   - https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-syntax
@@ -70,7 +70,7 @@ Optimize cost through automation.
 
 ----------
 
-### CodeDeploy
+## CodeDeploy
 
 - `appspec` file can be YML or JSON.
 
@@ -80,26 +80,26 @@ Optimize cost through automation.
 
 ----------
 
-### AWS Batch
+## AWS Batch
 
 - AWS Batch has a delay of an hour?
 
 ----------
 
-### CodeStart
+## CodeStart
 
 - The main file is `template.yml`.
 
 ----------
 
-### CodePipeline
+## CodePipeline
 
 - `Continuous Delivery` phase requires manual approval step. `Continuous Integration` and `Continuous Deployment` are fully automated.
   - https://aws.amazon.com/devops/continuous-integration/
 
 ----------
 
-### CloudFormation
+## CloudFormation
 
 - CloudFormation does not detect a new file has been uploaded to `S3` unless one of these parameters change: - S3Bucket - S3Key (filename) - S3ObjectVersion
 
@@ -146,20 +146,20 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 ----------
 
-### SQS
+## SQS
 
 - SQS size limit is 256KB
   - Files must be uploaded to S3 and a reference to them should be sent to SQS.
 
 ----------
 
-### KMS
+## KMS
 
 - AWS KMS can encrypt data only up to 4 KB in size.
 
 ----------
 
-### Misc.
+## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
 
@@ -176,7 +176,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 ----------
 
-### ElasticBeanstalk
+## ElasticBeanstalk
 
 - (IMPORTANT!!!) Deployment methods: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
@@ -185,7 +185,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### IAM
+## IAM
 
 - Control access to resource based on `tags` with `aws:ResourceTag/<tag-key>` in IAM pocily:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
@@ -203,7 +203,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### Route 53
+## Route 53
 
 - We cannot set timed cutovers with `Route 53`.
 
@@ -219,7 +219,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### OpsWork
+## OpsWork
 
 - Support Chef and Puppet
 
@@ -234,7 +234,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
   
 ----------
 
-### Load Balancer
+## Load Balancer
 
 - Application Load Balancer weighted target groups: https://aws.amazon.com/blogs/devops/blue-green-deployments-with-application-load-balancer/
   - https://aws.amazon.com/blogs/aws/new-application-load-balancer-simplifies-deployment-with-weighted-target-groups/
@@ -243,7 +243,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### EC2
+## EC2
 
 - EC2 placement groups: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html#placement-groups-spread
   - `Cluster Placement Groups` are recommended for applications that benefit from low network latency, high network throughput, or both.
@@ -260,7 +260,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### CloudWatch
+## CloudWatch
 
 - Metric Retention
   - Metric is kept for a period of 15 months
@@ -273,7 +273,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### Kinesis
+## Kinesis
 
 - When the requirement is to process streaming data in real time, `Kinesis` must be strongly considered. "Real time" usually points to `Kinesis`.
 
@@ -283,7 +283,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### Trusted Advisor
+## Trusted Advisor
 
 - Global service - need to be in North Virginia region to create an Event.
 - Use cases: https://github.com/aws/Trusted-Advisor-Tools
@@ -302,7 +302,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ----------
 
-### GuardDuty
+## GuardDuty
 
 - `GuardDuty` is a threat detection service that continuously monitors your AWS accounts, workloads for malicious activity and delivers detailed security findings for visibility and remediation.
 - Gain insight of compromised credentials, unusual data access in Amazon S3, API calls from known malicious IP addresses.
@@ -324,14 +324,14 @@ Data protection: at rest
 
 ----------
 
-### Secrets Manager
+## Secrets Manager
 
 - `Secrets Manager` has additional charges compared to `Parameter Store`.
 
   
 ----------
 
-### Auto Scaling Group
+## Auto Scaling Group
 
 - Template
   - `Launch Template` allows a combination of On-Demand and Spot instances.
@@ -382,25 +382,25 @@ Data protection: at rest
 
 ----------
 
-### AWS Security Hub 
+## AWS Security Hub 
 
 - When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
 
 ----------
 
-### Aurora
+## Aurora
 
 - Amazon Aurora can have up to 15 replicas.
 
 ----------
 
-### `EventBridge`
+## EventBridge
 
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
 ----------
 
-### DynamoDB
+## DynamoDB
 
 - `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
   - https://aws.amazon.com/dynamodb/global-tables/
