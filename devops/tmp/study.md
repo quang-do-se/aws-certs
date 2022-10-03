@@ -424,6 +424,7 @@ Data protection: at rest
 - `Point-in-time recovery` is not an archival solution because it retains the data for only **35** days. 
 
 - `DynamoDB Streams` is integrated with `AWS Lambda` (only option) to create triggers - pieces of code that automatically respond to events in DynamoDB Streams.
+  - Automatically Archive Items to S3 Using DynamoDB Time to Live (TTL) with AWS Lambda and Amazon Kinesis Firehose: https://aws.amazon.com/blogs/database/automatically-archive-items-to-s3-using-dynamodb-time-to-live-with-aws-lambda-and-amazon-kinesis-firehose/
 
 ----------
 
