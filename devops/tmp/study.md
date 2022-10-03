@@ -80,6 +80,8 @@
 
 - CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
+- Deployment groups in CodeDeploy are defined by `TAGS`, not by the registration of instance IDs.
+
 ----------
 
 ## CodeStart
