@@ -366,6 +366,8 @@ Data protection: at rest
 
 - When you enable `AWS Security Hub`, it begins to consume, aggregate, organize, and prioritize findings from AWS services that you have enabled, such as `Amazon GuardDuty`, `Amazon Inspector`, and `Amazon Macie`.
 
+- `AWS Security Hub` is used to provide a comprehensive view of security alerts and security posture across your AWS accounts. With Security Hub, you have a single place that aggregates, organizes, and prioritizes your security alerts, or findings, from multiple AWS services, such as `Amazon GuardDuty`, `Amazon Inspector`, `Amazon Macie`, `AWS Identity and Access Management (IAM) Access Analyzer`, `AWS Systems Manager`, and `AWS Firewall Manager`, as well as from AWS Partner Network (APN) solutions.
+
 ----------
 
 ## Aurora
@@ -412,6 +414,8 @@ Data protection: at rest
   - **Config Configuration Item Change** vs. **Config Rules Compliance Change**
 
 - SNS Topic is used for the whole Config (for operational insights). There is no SNS notification at Rule level. You should use `CloudWatch Events` for Rules.
+
+- You can develop custom rules by associate each custom rule with an AWS Lambda function.
 
 ----------
 
