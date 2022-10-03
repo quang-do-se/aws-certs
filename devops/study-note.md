@@ -339,7 +339,10 @@ Form 2022: `service-provider::service-name::data-type-name`
 
 - **cfn-hup**: Use to check for updates to metadata and execute custom hooks when changes are detected
   - For example, when EC2 instance's metadata is updated by CloudFormation, `cfn-init` is not run again and has to be triggered by `cfn-hup`. `cfn-init` is only when stack is freshly created. This allows us to keep the same EC2 instance and just update its metadata instead of deleting it and deploying a new one.
-
+  - `cfn-hup.conf` configuration file: The `cfn-hup.conf` file stores the name of the stack and the AWS credentials that the cfn-hup daemon targets.
+  - `hooks.conf` configuration file: The user actions that the cfn-hup daemon calls periodically are defined in the `hooks.conf` configuration file. 
+  - `hooks.d` directory: The cfn-hup daemon parses and loads each file in this directory. If any hooks in the hooks.d directory have the same name as a hook in hooks.conf, the hooks will be merged (meaning hooks.d will overwrite hooks.conf for any values that both files specify).
+  
 #### ChangeSets
 
 - When you update a stack, you need to know what changes before it happens for greater confidence.
@@ -750,7 +753,7 @@ You can use resource groups to organize your AWS resources.
 
 - Audit and ensure resource compliance over time
 - Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation`
-  - https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig. Need to know different Event Types. (IMPORTANT!!!) 
+  - (IMPORTANT!!!) Event Types in Config https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig
   
 #### AWS Inspector
 
