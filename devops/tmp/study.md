@@ -464,6 +464,13 @@ Data protection: at rest
 
 ----------
 
+## Service Quotas
+
+- Go to Service Quotas console and select a quota then create a CloudWatch Alarm.
+  - https://docs.aws.amazon.com/servicequotas/latest/userguide/configure-cloudwatch.html
+
+----------
+
 ## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
