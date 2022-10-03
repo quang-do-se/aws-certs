@@ -126,7 +126,6 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
 
-
 - CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
 
 - In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
@@ -205,6 +204,12 @@ We can't bring in resources that aren't previously created utilizing the Elastic
   - Load Balancer layer
   - Application Server layer
   - Database layer
+
+- It has stack manager, layers manager, instances manager, apps manager, monitoring tool...
+
+- (IMPORTANT!!!) Need to know `OpsWorks Stacks LifeCycle Events` for exam: https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-events.html
+  - `Configure` event applies to all instances when one of them goes online or offline. This could be used to configure all the instances at once and make them aware of each other.
+  - `Setup`, `Deploy`, `Undeploy`, `Shutdown` are instant specific and they can be run individually.
 
 - OpsWork automatic instance scaling options:
   - With automatic `load-based` scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
