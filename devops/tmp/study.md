@@ -162,6 +162,11 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 - We cannot use `Elastic Beanstalk` to migrate our applications. We cannot import or export environments with `Elastic Beanstalk`.
 We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
 
+- `commands`: You can use the `commands` key to execute commands on the EC2 instance. 
+  - The commands run **BEFORE** the application and web server are set up and the application version file is extracted.
+- `container_commands`: You can use the `container_commands` key to execute commands that affect your application source code. 
+  - Container commands run **AFTER** the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed. 
+
 ----------
 
 ## IAM
@@ -446,3 +451,5 @@ Data protection: at rest
 - AWS Batch has a delay of an hour?
 
 - The AWS CLI credentials and configuration settings take precedence in the following order: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-precedence
+
+- An `STS` Token expires after 1 hour.
