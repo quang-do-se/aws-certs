@@ -121,9 +121,8 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
 
-
 - CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
-
+  - Develop `custom resources` backed by `AWS Lambda` to add intelligence to CloudFormation.
 
 - In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
 
