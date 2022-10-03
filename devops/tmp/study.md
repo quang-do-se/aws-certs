@@ -159,6 +159,14 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - (IMPORTANT!!!) Deployment methods: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
 
+- (IMPORTANT!!!) Option Precedence, from highest to lowest: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
+  - `Settings applied directly to the environment` - Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the Elastic Beanstalk console, EB CLI, AWS CLI, and SDKs. The Elastic Beanstalk console and EB CLI also apply recommended values for some options that apply at this level unless overridden.
+  - `Saved Configurations` - Settings for any options that are not applied directly to the environment are loaded from a saved configuration, if specified.
+  - `Configuration Files (.ebextensions)` - Settings for any options that are not applied directly to the environment, and also not specified in a saved configuration, are loaded from configuration files in the .ebextensions folder at the root of the application source bundle.
+    - Configuration files are executed in alphabetical order. For example, .ebextensions/01run.config is executed before .ebextensions/02do.config.
+  - `Default Values` - If a configuration option has a default value, it only applies when the option is not set at any of the above levels.
+
+
 - We cannot use `Elastic Beanstalk` to migrate our applications. We cannot import or export environments with `Elastic Beanstalk`.
 We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
 

@@ -399,15 +399,7 @@ We can save non-default configurations then later import and deploy it to other 
 
 - General options for all environments: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html
 - Option settings: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions-optionsettings.html
-
-- (IMPORTANT!!!) Option Precedence: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
-  - Settings applied directly to the environment
-  - Saved Configurations
-  - Configuration Files (.ebextensions)
-  - Default Values
   
-- Container Commands vs Commands: https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
-
 #### Version
 
 - Can have at most 1000 versions.
@@ -713,15 +705,6 @@ Using Fargate helps simplify autoscaling strategy.
   - ElasticSearch: Provide search and indexing capability
   - Kibana: Provide real-time dashboards on top of the data sits in ES
   - Logstash: Log ingestion mechanism
-
-- When an instance is launched, Elastic Beanstalk runs `preinit`, `appdeploy`, and `postinit`, in this order.
-  - https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platform-hooks.html
-  
-- `commands`: You can use the `commands` key to execute commands on the EC2 instance. The commands run before the application and web server are set up and the application version file is extracted.
-
-- `container_commands`: You can use the `container_commands` key to execute commands that affect your application source code. Container commands run after the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed. 
-
-- `Container Commands` vs `Commands`? https://stackoverflow.com/questions/35788499/what-is-difference-between-commands-and-container-commands-in-elasticbean-talk/40096352#40096352
 
 ----------
 
