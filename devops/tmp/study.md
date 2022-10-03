@@ -165,7 +165,10 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 - `commands`: You can use the `commands` key to execute commands on the EC2 instance. 
   - The commands run **BEFORE** the application and web server are set up and the application version file is extracted.
 - `container_commands`: You can use the `container_commands` key to execute commands that affect your application source code. 
-  - Container commands run **AFTER** the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed. 
+  - Container commands run **AFTER** the application and web server have been set up and the application version archive has been extracted, but **BEFORE** the application version is deployed.
+
+- When an instance is launched, Elastic Beanstalk runs `commands`, `prebuild`, `Buildfile`, `container_commands` `predeploy`, and `postdeploy`, in this order.
+  - (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html#platforms-linux-extend.workflow
 
 ----------
 
