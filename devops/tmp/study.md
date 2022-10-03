@@ -437,3 +437,5 @@ Data protection: at rest
   - `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
 
 - AWS Batch has a delay of an hour?
+
+- The AWS CLI credentials and configuration settings take precedence in the following order: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-precedence
