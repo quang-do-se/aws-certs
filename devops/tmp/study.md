@@ -18,7 +18,7 @@
 
 - Automation is key.
   - The solution must Optimize cost.
-  - The solution must automatically apply to new instance and new region.
+  - The solution must automatically apply to new instances and new regions.
 
 ----------
 
