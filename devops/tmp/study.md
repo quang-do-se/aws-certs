@@ -421,6 +421,10 @@ Data protection: at rest
 - `DynamoDB` is the only option that supports multi-region replication and multi-master writes, and it does this using `Global Tables`.
   - https://aws.amazon.com/dynamodb/global-tables/
 
+- `Point-in-time recovery` is not an archival solution because it retains the data for only **35** days. 
+
+- `DynamoDB Streams` is integrated with `AWS Lambda` (only option) to create triggers - pieces of code that automatically respond to events in DynamoDB Streams.
+
 ----------
 
 ## AWS Config

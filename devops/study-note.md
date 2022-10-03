@@ -905,6 +905,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 #### Global Tables
 
 - Replicating data between Regions and resolving update conflicts.
+
 - Table must be empty and `DynamoDB Streams` are enabled.
   - `DynamoDB Streams` uses `Kinesis Stream` behind the scene. 2MB/s at read PER SHARD across all consumers.
   - No more than 2 processes should be reading from the same streams shard at the same time. Having more than 2 readers per hard can result in throttling.
