@@ -760,6 +760,8 @@ You can use resource groups to organize your AWS resources.
 - Security Vulnerabilities scan from within the OS using the agent
   - Need to manually install agent or assign the right role to allow Inspector to install agent on its own
 - Or outside network scanning (no need for the agent)
+  -  A network configuration analysis checks for any ports reachable from outside the VPC. 
+  
 - `Inspector` automatically discovers and scans Amazon EC2 instances and container images in ECR for software vulnerabilities and unintended network exposure.
 
 #### AWS Systems Manager

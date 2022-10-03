@@ -251,6 +251,8 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 - Cloudwatch Metrics are grouped into `namespaces`.
 
+- Scenario: Monitor your estimated charges using CloudWatch: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/gs_monitor_estimated_charges_with_cloudwatch.html
+
 ----------
 
 ## Kinesis
@@ -265,13 +267,16 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 ## Trusted Advisor
 
-- Global service - need to be in North Virginia region to create an Event.
+- Global service - need to be in North Virginia region to create an `EventBridge` event.
+  - Trusted Advisor itself cannot act as a trigger. It can be used with `EventBridge` events to create a trigger. 
+
 - Use cases: https://github.com/aws/Trusted-Advisor-Tools
   - Can check low and high utilization EC2 
   - Integrate with `EventBridge`, `SSM Automation` and `Lambda`
+  
 - Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
-- Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
 
+- Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
 
 - `AWS Trusted Advisor` provides guidance for **FIVE** check categories:
   - Cost optimization
