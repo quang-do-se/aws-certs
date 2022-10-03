@@ -438,6 +438,18 @@ Data protection: at rest
 
 ----------
 
+## Elastic Container Service
+
+- There is no option to create **Notifications** within the ECS cluster options. That notification functionality can be used with `EventBridge` (CloudWatch Events).
+
+----------
+
+## Simple Storage Service (S3)
+
+- S3 `Lifecycle` policy can include a `filter` rule to delete objects with certain tags, key prefix or a combination of both.
+
+----------
+
 ## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
