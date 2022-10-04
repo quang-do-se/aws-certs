@@ -22,6 +22,8 @@
 
 - When the requirement is to process data or stream data in NEAR REAL TIME, `Kinesis` must be strongly considered. "REAL TIME" usually points to `Kinesis`.
 
+- Lambda has a timeout of 15 minutes.
+
 ----------
 
 ## Review
@@ -139,6 +141,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 - In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
 
 - CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
+  - Cross-stack references allows separation of concerns and facilitates resource sharing between different teams.
 
 - In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
 
