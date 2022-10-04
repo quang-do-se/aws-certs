@@ -250,6 +250,8 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 - You can't delete a `Load Balancer` if deletion protection is enabled.
 
+- `Access logging` is an optional feature of Elastic Load Balancing that is DISABLED BY DEFAULT.
+
 ----------
 
 ## EC2
