@@ -24,6 +24,8 @@
 
 - Lambda has a timeout of 15 minutes.
 
+- Secret rotation will require `Secrets Manager`. `Parameter Store` can also store secrets for a reduced cost but without rotation.
+
 ----------
 
 ## Review
