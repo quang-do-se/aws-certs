@@ -82,7 +82,7 @@
 
 - Deployment groups in CodeDeploy are defined by `TAGS`, not by the registration of instance IDs.
 
-- Deployment group can have `Alarms` in advanced options.
+- We can add `Alarms` in Deployment group.
 
 ----------
 
