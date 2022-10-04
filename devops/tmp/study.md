@@ -251,7 +251,8 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 - You can't delete a `Load Balancer` if deletion protection is enabled.
 
 - `Access logging` is an optional feature of Elastic Load Balancing that is DISABLED BY DEFAULT.
-
+  - After you enable ELB access logging, the ELB captures the logs and stores them in a specific Amazon S3 bucket. Any time after that, when you set up the logs, you can change the interval at which the logs are taken, from 5 minutes to 60 minutes.
+  
 ----------
 
 ## EC2
