@@ -483,6 +483,16 @@ Data protection: at rest
 
 ----------
 
+## CloudTrail
+
+- AWS CloudTrail is a service that records API calls for your AWS account and delivers log files containing API calls to:
+  - Your Amazon S3 bucket
+  - A CloudWatch Logs log group
+  
+- With AWS CloudTrail, you can look up API activity history related to the creation, deletion, and modification of AWS resources and troubleshoot operational or security issues.
+
+----------
+
 ## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
