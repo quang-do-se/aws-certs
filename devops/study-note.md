@@ -776,7 +776,8 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
   - Can check low and high utilization EC2 
   - Integrate with `EventBridge`, `SSM Automation` and `Lambda`
 - Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
-- Can only refresh every 5 minutes and need to be triggered by API `refresh-trusted-advisor-check`.
+
+- Can only refresh checks/reports every 5 minutes and need to be triggered by an API `refresh-trusted-advisor-check`.
 
 
 `AWS Trusted Advisor` provides guidance for FIVE check categories:
