@@ -466,6 +466,8 @@ Data protection: at rest
 
 - S3 `Lifecycle` policy can include a `filter` rule to delete objects with certain tags, key prefix or a combination of both.
 
+- S3 is a Regional service. For Disaster Recovery, use `S3 Cross Region Replication`.
+
 ----------
 
 ## Service Quotas
