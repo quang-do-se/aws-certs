@@ -20,6 +20,8 @@
   - The solution must Optimize cost.
   - The solution must automatically apply to new instances and new regions.
 
+- When the requirement is to process data or stream data in NEAR REAL TIME, `Kinesis` must be strongly considered. "REAL TIME" usually points to `Kinesis`.
+
 ----------
 
 ## Review
@@ -299,7 +301,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 ## Trusted Advisor
 
 - Global service - need to be in North Virginia region to create an `EventBridge` event.
-  - Trusted Advisor itself cannot act as a trigger. It can be used with `EventBridge` events to create a trigger. 
+  - Trusted Advisor itself CANNOT act as a trigger. It can be used with `EventBridge` events to create a trigger. 
 
 - Use cases: https://github.com/aws/Trusted-Advisor-Tools
   - Can check low and high utilization EC2 
@@ -522,3 +524,5 @@ Data protection: at rest
 - The AWS CLI credentials and configuration settings take precedence in the following order: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-precedence
 
 - An `STS` Token expires after 1 hour.
+
+- `OpenSearch` (formerly known as `Elasticsearch`) is designed to analyze and search within logged data.
