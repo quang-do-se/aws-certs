@@ -551,3 +551,5 @@ Data protection: at rest
 - `AWS Single Sign-On` allows you to centrally manage all of your AWS accounts managed through AWS Organizations, and it will also allow you to control access permissions based on common job functions and security requirements. 
 
 - `Amazon EMR` now supports managed scaling and can automatically resize clusters.
+
+- `Amazon Athena` is an interactive query service that makes it easy to analyze data in `Amazon S3` using standard SQL. 
