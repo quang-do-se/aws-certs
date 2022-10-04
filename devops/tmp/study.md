@@ -82,6 +82,8 @@
 
 - Deployment groups in CodeDeploy are defined by `TAGS`, not by the registration of instance IDs.
 
+- Deployment group can have `Alarms` in advanced options.
+
 ----------
 
 ## CodeStart
@@ -268,6 +270,8 @@ We can't bring in resources that aren't previously created utilizing the Elastic
   - Less granularity overtime
 
 - Cloudwatch Metrics are grouped into `namespaces`.
+
+- We can create `metric filters` for a `log group` and then create `alarms` for those `metric filters`.
 
 - Scenario: Monitor your estimated charges using CloudWatch: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/gs_monitor_estimated_charges_with_cloudwatch.html
 
