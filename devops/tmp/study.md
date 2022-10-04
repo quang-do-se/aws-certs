@@ -107,6 +107,12 @@
   - `WaitCondition` is a resource.
   - `CreationPolicy` is an attribute.
   - The `CreationPolicy` is recommended for `EC2` and `Auto Scaling`.
+  - For Amazon `EC2` and `Auto Scaling resources`, we recommend that you use a `CreationPolicy` attribute instead of `WaitCondition`s.
+     - Add a `CreationPolicy` attribute to those resources, and use the `cfn-signal` helper script to signal when an instance creation process has completed successfully.
+     - You can use a `WaitCondition` for situations like the following:
+       - To coordinate stack resource creation with configuration actions that are EXTERNAL to the stack creation.
+     - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
+    
 
 - We cannot do a rolling update to `Auto Scaling` unless we are utililzing `CloudFormation`. (`UpdatePolicy` attribute under `AutoScalingGroup` resource)
 
