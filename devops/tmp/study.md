@@ -494,6 +494,14 @@ Data protection: at rest
   
 - With AWS CloudTrail, you can look up API activity history related to the creation, deletion, and modification of AWS resources and troubleshoot operational or security issues.
 
+- Create CloudTrail Alarms: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudwatch-alarms-for-cloudtrail.html
+  1. Create a trail
+  2. Create a log group
+  3. Create an IAM role that grants CloudTrail to create a CloudWatch Logs log stream in the log group
+  4. Create a metric filter in the log group
+  5. Configure an Alarm based on the filter
+  
+
 ----------
 
 ## Misc.
