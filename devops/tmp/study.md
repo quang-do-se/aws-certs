@@ -431,6 +431,22 @@ Data protection: at rest
 
 - Message size: 256 KB
 
+- Amazon EventBridge event patterns: https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html
+
+``` json
+{
+  "source": ["aws.macie"],
+  "detail-type": ["Macie Finding"],
+  "detail": {
+    "severity": {
+      "score": [1]
+    },
+    "count":[2]
+  }
+}
+
+```
+
 ----------
 
 ## SNS
@@ -531,3 +547,5 @@ Data protection: at rest
 - `OpenSearch` (formerly known as `Elasticsearch`) is designed to analyze and search within logged data.
 
 - `AWS Single Sign-On` allows you to centrally manage all of your AWS accounts managed through AWS Organizations, and it will also allow you to control access permissions based on common job functions and security requirements. 
+
+- `Amazon EMR` now supports managed scaling and can automatically resize clusters.
