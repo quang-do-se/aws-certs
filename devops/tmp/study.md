@@ -526,3 +526,5 @@ Data protection: at rest
 - An `STS` Token expires after 1 hour.
 
 - `OpenSearch` (formerly known as `Elasticsearch`) is designed to analyze and search within logged data.
+
+- `AWS Single Sign-On` allows you to centrally manage all of your AWS accounts managed through AWS Organizations, and it will also allow you to control access permissions based on common job functions and security requirements. 
