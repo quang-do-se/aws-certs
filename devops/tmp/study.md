@@ -22,9 +22,10 @@
 
 - When the requirement is to process data or stream data in NEAR REAL TIME, `Kinesis` must be strongly considered. "REAL TIME" usually points to `Kinesis`.
 
-- Lambda has a timeout of 15 minutes.
-
 - Secret rotation will require `Secrets Manager`. `Parameter Store` can also store secrets for a reduced cost but without rotation.
+
+- Lambda has a timeout of 15 minutes.
+- Lambda has a max concurrent execution of `1,000`, while API gateway has a max concurrent execution of `10,000`.
 
 ----------
 
@@ -297,6 +298,10 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 - Cloudwatch Metrics are grouped into `namespaces`.
 
 - We can create `metric filters` for a `log group` and then create `alarms` for those `metric filters`.
+  - The actual steps that happened: 
+    1. Create a CloudWatch Logs Metric Filter (filter pattern)
+    2. Assign a CloudWatch Metric
+    3. Create a CloudWatch Alarm linked to the metric and use SNS as a target.
 
 - Scenario: Monitor your estimated charges using CloudWatch: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/gs_monitor_estimated_charges_with_cloudwatch.html
 
@@ -443,6 +448,7 @@ Data protection: at rest
 
 - Events Rules will match incoming events and route them to the target.
   - An `event` indicates a change in an environment. A `rule` matches incoming events and sends them to `targets` for processing.
+  - A rule's targets must be in the same Region as the rule.
 
 - Message size: 256 KB
 
@@ -507,6 +513,8 @@ Data protection: at rest
 
 - AWS Config which can record all configuration changes and send the data to `S3`.
 
+- AWS Config is Regional. We'll need a CloudFormation StackSets to enable Config in all accounts and all regions.
+
 ----------
 
 ## Elastic Container Service
@@ -544,6 +552,18 @@ Data protection: at rest
   3. Create an IAM role that grants CloudTrail to create a CloudWatch Logs log stream in the log group
   4. Create a metric filter in the log group
   5. Configure an Alarm based on the filter
+
+----------
+
+## API Gateway
+
+- API Gateway APIs can directly invoke an AWS service and pass in a payload. It's a common way to provide a publicly available and secure API for your chosen AWS services.
+
+----------
+
+## Step Functions
+
+- You can use the Step Functions to coordinate the business logic to automate the snapshot management flow with error handling, retry logic, and workflow logic all baked into the Step Functions definition.
 
 ----------
 
