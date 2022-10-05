@@ -566,3 +566,5 @@ Data protection: at rest
 - `Amazon Athena` is an interactive query service that makes it easy to analyze data in `Amazon S3` using standard SQL. 
 
 - `Amazon Redshift` is not a serverless service and requires provisioning.
+
+- If we encrypt using `KMS`, we may get throttled at 10000 objects per second. It's better to use keys handled and managed by AWS.
