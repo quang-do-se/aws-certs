@@ -411,6 +411,11 @@ Data protection: at rest
 
 - `Termination Protection for EC2` prevents users from terminating an instance but doesn't prevent the ASG from terminating instances.
 
+- CloudFormation
+  - `AutoScalingReplacingUpdate` - To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, you should use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group. 
+    - `WillReplace: 'true'` will replace an ASG with a new one.
+  - `AutoScalingRollingUpdate` - To specify how AWS CloudFormation handles rolling updates for an Auto Scaling group, use the AutoScalingRollingUpdate policy. Rolling updates enable you to specify whether AWS CloudFormation updates instances that are in an Auto Scaling group in batches or all at once. 
+  
 ----------
 
 ## AWS Security Hub 
@@ -486,7 +491,7 @@ Data protection: at rest
 
 - Audit and ensure resource compliance over time
 
-- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation` in Rules' settings.
+- Remediate noncompliant resources with `CloudWatch Events` or native integration with `AWS Systems Manager Automation` in Rules settings.
 
 - (IMPORTANT!!!) Event Types in Config: https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig
   - **Config Configuration Item Change** vs. **Config Rules Compliance Change**
