@@ -155,6 +155,9 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - Use `Change Set` to preview the effects of the changes before executing.
 
+- `RetainResource`
+  - If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
+
 ----------
 
 ## SQS
@@ -406,8 +409,7 @@ Data protection: at rest
   - Instances are assumed to be healthy unless Amazon EC2 Auto Scaling receives notification that they are unhealthy, which would come from `EC2`, `Elastic Load Balancing`, or `custom health checks`.
   - When it determines that an `InService` instance is unhealthy, it terminates that instance and launches a new one.
 
-- `RetainResource`
-  - If a `CloudFormation` stack has failed because of one resource, you can set the `RetainResource` parameter for the offending resource, and then delete the stack. This will bypass the problem resource and will allow the other resources, and ultimately the stack, to be deleted.
+- `Termination Protection for EC2` prevents users from terminating an instance but doesn't prevent the ASG from terminating instances.
 
 ----------
 
@@ -474,6 +476,12 @@ Data protection: at rest
 
 ----------
 
+## AWS Inspector
+
+- AWS Inspector cannot run an assessment directly on an AMI, it will not launch an EC2 instance for you.
+
+----------
+
 ## AWS Config
 
 - Audit and ensure resource compliance over time
@@ -483,7 +491,7 @@ Data protection: at rest
 - (IMPORTANT!!!) Event Types in Config: https://docs.aws.amazon.com/config/latest/developerguide/monitor-config-with-cloudwatchevents.html#create-cloudwatch-events-rule-for-awsconfig
   - **Config Configuration Item Change** vs. **Config Rules Compliance Change**
 
-- SNS Topic is used for the whole Config (for operational insights). There is no SNS notification at Rule level. You should use `CloudWatch Events` for Rules.
+- `SNS Topic` is used for the whole Config (for operational insights). There is no SNS notification at Rule level. You should use `CloudWatch Events` for Rules.
 
 - You can develop custom rules by associate each custom rule with an `AWS Lambda` function.
 
@@ -556,3 +564,5 @@ Data protection: at rest
 - `Amazon EMR` now supports managed scaling and can automatically resize clusters.
 
 - `Amazon Athena` is an interactive query service that makes it easy to analyze data in `Amazon S3` using standard SQL. 
+
+- `Amazon Redshift` is not a serverless service and requires provisioning.
