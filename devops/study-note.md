@@ -496,6 +496,7 @@ https://docs.aws.amazon.com/step-functions/latest/dg/concepts-input-output-filte
 For ECS, there are 2 roles we need to know about:
 - EC2 instance role (allows the ECS agent on EC2 instance to do calls againsts ECS service)
   - This role is attached to EC2 instances.
+  - For example, logging. The EC2 instance will be the one writing to CloudWatch logs, and therefore it must have an EC2 Instance Role with the appropriate permissions to write to CloudWatch logs.
 - Task role (for Docker containers to do its operations with AWS services such as pushing data to S3)
 - Service role (for auto scaling and load balancing)
 
