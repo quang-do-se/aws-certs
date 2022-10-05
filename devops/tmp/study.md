@@ -87,6 +87,7 @@
 - CodeDeploy's different deployment modes: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html
 
 - Deployment groups in CodeDeploy are defined by `TAGS`, not by the registration of instance IDs.
+  - EC2 instances must be properly tagged to be part of the correct deployment group.
 
 - We can add `Alarms` in Deployment group.
 
@@ -251,6 +252,10 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 - OpsWork automatic instance scaling options:
   - With automatic `load-based` scaling, you can set thresholds for CPU, memory, or load to define when additional instances will be started. 
   - With automatic `time-based` scaling, you can define at what time of the day instances will be started and stopped.
+  
+- CloudWatch Event events:
+  - There are 3 event which are `initiated_by`: `user`, `auto-scaling`, `auto-healing`
+  - If instances are automatically replaced or terminated, it will trigger `auto-healing` event.
   
 ----------
 
@@ -539,7 +544,6 @@ Data protection: at rest
   3. Create an IAM role that grants CloudTrail to create a CloudWatch Logs log stream in the log group
   4. Create a metric filter in the log group
   5. Configure an Alarm based on the filter
-  
 
 ----------
 
