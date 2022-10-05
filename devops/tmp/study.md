@@ -181,9 +181,8 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
     - Configuration files are executed in alphabetical order. For example, .ebextensions/01run.config is executed before .ebextensions/02do.config.
   - `Default Values` - If a configuration option has a default value, it only applies when the option is not set at any of the above levels.
 
-
 - We cannot use `Elastic Beanstalk` to migrate our applications. We cannot import or export environments with `Elastic Beanstalk`.
-We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
+  - We can't bring in resources that aren't previously created utilizing the Elastic Beanstalk service.
 
 - `commands`: You can use the `commands` key to execute commands on the EC2 instance. 
   - The commands run **BEFORE** the application and web server are set up and the application version file is extracted.
@@ -192,6 +191,8 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 
 - When an instance is launched, Elastic Beanstalk runs `commands`, `prebuild`, `Buildfile`, `container_commands` `predeploy`, and `postdeploy`, in this order.
   - (IMPORTANT!!!) https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html#platforms-linux-extend.workflow
+  
+- `leader_only` attribute is only supported by `container_commands`. It will run the command on a single instance.
 
 ----------
 
@@ -306,7 +307,7 @@ We can't bring in resources that aren't previously created utilizing the Elastic
 ## Trusted Advisor
 
 - Global service - need to be in North Virginia region to create an `EventBridge` event.
-  - Trusted Advisor itself CANNOT act as a trigger. It can be used with `EventBridge` events to create a trigger. 
+  - Trusted Advisor itself CANNOT act as a trigger. It must be used with `EventBridge` events to create a trigger. 
 
 - Use cases: https://github.com/aws/Trusted-Advisor-Tools
   - Can check low and high utilization EC2 
@@ -484,7 +485,9 @@ Data protection: at rest
 
 - SNS Topic is used for the whole Config (for operational insights). There is no SNS notification at Rule level. You should use `CloudWatch Events` for Rules.
 
-- You can develop custom rules by associate each custom rule with an AWS Lambda function.
+- You can develop custom rules by associate each custom rule with an `AWS Lambda` function.
+
+- AWS Config which can record all configuration changes and send the data to `S3`.
 
 ----------
 
