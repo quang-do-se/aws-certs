@@ -105,6 +105,10 @@
 - `Continuous Delivery` phase requires manual approval step. `Continuous Integration` and `Continuous Deployment` are fully automated.
   - https://aws.amazon.com/devops/continuous-integration/
 
+- CodePipeline handles the copying of artifacts from one AWS Region to the other Regions when performing cross-region actions.
+
+- If your release process includes activities that are not included in the default actions, such as an internally developed build process or a test suite, you can create a custom action for that purpose and include it in your pipeline. You can use the AWS CLI to create custom actions in pipelines associated with your AWS account.
+  - When you create a custom action, you must also create a job worker that will poll CodePipeline for job requests for this custom action, execute the job, and return the status result to CodePipeline. This job worker can be located on any computer or resource as long as it has access to the public endpoint for CodePipeline. To easily manage access and security, consider hosting your job worker on an Amazon EC2 instance.
 ----------
 
 ## CloudFormation
@@ -309,6 +313,8 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 ## Kinesis
 
+- Kinesis streams are currently the only resource supported as a destination for cross-account subscriptions.
+
 - When the requirement is to process streaming data in real time, `Kinesis` must be strongly considered. "Real time" usually points to `Kinesis`.
 
 - `Kinesis Data Streams` is a low latency streaming service in AWS Kinesis with the facility for ingesting at scale. On the other hand, `Kinesis Firehose` aims to serve as a data transfer service.
@@ -337,6 +343,10 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
   - Security
   - Fault tolerance
   - Service limits
+
+- Creating Amazon CloudWatch alarms to monitor AWS Trusted Advisor metric (N. Virginia AWS Region): https://docs.aws.amazon.com/awssupport/latest/user/cloudwatch-metrics-ta.html
+
+- AWS Trusted Advisor is integrated with the Amazon CloudWatch Events and Amazon CloudWatch services. You can use `Amazon CloudWatch Events` to detect and react to changes in the status of Trusted Advisor checks. And you can use Amazon CloudWatch to create `Alarms` on Trusted Advisor metrics for check status changes, resource status changes, and service limit utilization.
 
 ----------
 
@@ -534,6 +544,8 @@ Data protection: at rest
 
 - S3 is a Regional service. For Disaster Recovery, use `S3 Cross Region Replication`.
 
+- To be sure to comply with the `s3-bucket-ssl-requests-only` rule, create a Bucket Policy that explicitly denies access when the request meets the condition `"aws:SecureTransport": "false"`. This policy explicitly denies access to HTTP requests.
+
 ----------
 
 ## Service Quotas
@@ -604,3 +616,5 @@ Data protection: at rest
 - If we encrypt using `KMS`, we may get throttled at 10000 objects per second. It's better to use keys handled and managed by AWS.
 
 - `AWS Application Discovery Service` helps plan your migration for VMWare servers. This service is especially good if we need to collect various information from MANY servers.
+
+- The default network ACL is configured to allow all traffic to flow in and out of the subnets with which it is associated.
