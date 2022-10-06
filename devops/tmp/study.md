@@ -515,6 +515,11 @@ Data protection: at rest
 
 - AWS Config is Regional. We'll need a CloudFormation StackSets to enable Config in all accounts and all regions.
 
+- There are two types of triggers for Config Rules:
+  - `Configuration changes`
+  - `Periodic`
+
+
 ----------
 
 ## Elastic Container Service
@@ -597,3 +602,5 @@ Data protection: at rest
 - `Amazon Redshift` is not a serverless service and requires provisioning.
 
 - If we encrypt using `KMS`, we may get throttled at 10000 objects per second. It's better to use keys handled and managed by AWS.
+
+- `AWS Application Discovery Service` helps plan your migration for VMWare servers. This service is especially good if we need to collect various information from MANY servers.
