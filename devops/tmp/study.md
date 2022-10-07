@@ -682,3 +682,5 @@ Data protection: at rest
 - `ElasticBeanStalk` email notification
 - AWS Config `ec2-volume-inuse-check`
 - CodeDeploy environment
+- AWS Control Tower or Organization + service control policy (SCP)?
+  - Scenario: Each account can delete and edit its own CloudTrail and Config but cannot edit other accounts' CloudTrail and Config.
