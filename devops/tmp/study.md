@@ -77,7 +77,7 @@
   - Lambda has a timeout of 15 minutes
   - CodeBuild can have between 5 minutes and 8 hours for a timeout.
   
-- `CodeBuild Triggers` allow you to schedule automated builds every hour, day, week or custom time.  
+- `CodeBuild Triggers` allow you to schedule automated builds every hour, day, week or custom time.
 
 - `CodeBuild` NamespaceType can add `BUILD_ID` into artifact path: https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ProjectArtifacts.html#CodeBuild-Type-ProjectArtifacts-namespaceType
 
@@ -111,13 +111,17 @@
 
 - CodePipeline handles the copying of artifacts from one AWS Region to the other Regions when performing cross-region actions.
 
-- If your release process includes activities that are not included in the default actions, such as an internally developed build process or a test suite, you can create a custom action for that purpose and include it in your pipeline. You can use the AWS CLI to create custom actions in pipelines associated with your AWS account.
-  - When you create a custom action, you must also create a job worker that will poll CodePipeline for job requests for this custom action, execute the job, and return the status result to CodePipeline. This job worker can be located on any computer or resource as long as it has access to the public endpoint for CodePipeline. To easily manage access and security, consider hosting your job worker on an Amazon EC2 instance.
+- If your release process includes activities that are not included in the default actions, such as an internally developed build process or a test suite, you can create a `custom action` for that purpose and include it in your pipeline. You can use the AWS CLI to create custom actions in pipelines associated with your AWS account.
+  - When you create a custom action, you must also create a `job worker` that will poll CodePipeline for job requests for this custom action, execute the job, and return the status result to CodePipeline. This job worker can be located on any computer or resource as long as it has access to the public endpoint for CodePipeline. To easily manage access and security, consider hosting your job worker on an Amazon EC2 instance.
+  
 ----------
 
 ## CloudFormation
 
-- CloudFormation does not detect a new file has been uploaded to `S3` unless one of these parameters change: - S3Bucket - S3Key (filename) - S3ObjectVersion
+- CloudFormation does not detect a new file has been uploaded to `S3` unless one of these parameters change: 
+  - S3 Bucket 
+  - S3 Key (filename) 
+  - S3 Object Version
 
 - `WaitCondtion` vs `CreationPolicy`
   - `WaitCondition` is a resource.
