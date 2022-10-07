@@ -35,6 +35,8 @@
 - Lambda SAM Framework
 - EventBridge 
   - Event bus
+- Control Tower
+- EC2 Image Builder - Golden AMIs made easy (may replace SSM Automation)
 
 ----------
 
@@ -51,8 +53,10 @@
 
 - CodeCommit `Notification` vs `Trigger`
   - Notifications should be used for literal notification and not for taking action based on them.
+    - Can send to SNS topic or AWS Chatbot (Slack)
   - Triggers are supposed to initiate action. So, if I need to invoke some service based on this event on which trigger is based, I would do that and hence the option to integrate Lambda service. In a way to add automation after codecommit events.
   - Triggers are more limited in scope: Push to existing branch, create branch or tag, delete branch or tag.
+    - Can send to SNS or Lambda
 
 - `Code Commit` can trigger Lambda directly.
 
@@ -236,6 +240,8 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
   - IP-based routing policy
   - Multivalue answer routing policy
   - Weighted routing policy 
+
+- Keep in mind that you have to create an `alias record` in Amazon Route 53 in order to point to your load balancer.
 
 ----------
 
@@ -454,6 +460,8 @@ Data protection: at rest
 
 ## EventBridge
 
+- You can call the `EBS Create Snapshot`, `EC2 Image Builder` directly as a target from EventBridge.
+
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
 - Events Rules will match incoming events and route them to the target.
@@ -536,6 +544,8 @@ Data protection: at rest
 
 - There is no option to create **Notifications** within the ECS cluster options. That notification functionality can be used with `EventBridge` (CloudWatch Events).
 
+- Add `--force-new-deployment` option to the AWS CLI command so that ECS re-deploys your cluster pulling the new image.	
+
 ----------
 
 ## Simple Storage Service (S3)
@@ -584,6 +594,17 @@ Data protection: at rest
 
 ----------
 
+## CloudFront
+
+- You can already configure CloudFront to help enforce secure end-to-end connections to origin servers by using `HTTPS`. `Field-level encryption` adds an additional layer of security along with HTTPS that lets you protect specific data throughout system processing so that only certain applications can see it. Field-level encryption allows you to securely upload user-submitted sensitive information to your web servers. The sensitive information provided by your clients is encrypted at the edge closer to the user and remains encrypted throughout your entire application stack, ensuring that only applications that need the data—and have the credentials to decrypt it—are able to do so.
+  - To use field-level encryption, you configure your CloudFront distribution to specify the set of fields in POST requests that you want to be encrypted, and the public key to use to encrypt them. You can encrypt up to 10 data fields in a request.
+
+- You can improve performance by increasing the proportion of your viewer requests that are served from CloudFront edge caches instead of going to your origin servers for content; that is, by improving the cache hit ratio for your distribution. To increase your cache hit ratio, you can configure your origin to add a `Cache-Control max-age` directive to your objects, and specify the longest practical value for `max-age`. The shorter the cache duration, the more frequently CloudFront forwards another request to your origin to determine whether the object has changed and, if so, to get the latest version.
+
+- `Origin access identity (OAI)` is mainly used to restrict access to objects in S3 bucket.
+
+----------
+
 ## Misc.
 
 - To ensure that no security credentials are ever commited to the code repository, use `git-secrets` as a pre-commit hook. https://github.com/awslabs/git-secrets
@@ -618,3 +639,5 @@ Data protection: at rest
 - `AWS Application Discovery Service` helps plan your migration for VMWare servers. This service is especially good if we need to collect various information from MANY servers.
 
 - The default network ACL is configured to allow all traffic to flow in and out of the subnets with which it is associated.
+
+- `AWS Storage Gateway` offers file-based, volume-based, and tape-based storage solutions. 
