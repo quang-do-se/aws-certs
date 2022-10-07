@@ -4,7 +4,8 @@
 
 - "You want to focus on the simplest, most technically correct answer."
 
-- We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. **Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
+- We wanna automate all aspects of our environment. We wanna use that infrastructure as code mentality. 
+**Manual step isn't going to be the right answer**. We wanna avoide **manual steps** in any of the scenarios that were given on the exam.
 
 - When routing **portions of users**, always choose Amazon Route 53.
 
@@ -56,11 +57,8 @@
   - Notifications should be used for literal notification and not for taking action based on them.
     - Can send to SNS topic or AWS Chatbot (Slack)
     
-  - Triggers are supposed to initiate action. So, if I need to invoke some service based on this event on which trigger is based, I would do that and hence the option to integrate Lambda service. In a way to add automation after codecommit events.
   - Triggers are more limited in scope: Push to existing branch, create branch or tag, delete branch or tag.
     - Can send to SNS or Lambda
-
-- `Code Commit` can trigger Lambda directly.
 
 - `Code Commit` supports IAM policies only.
 
