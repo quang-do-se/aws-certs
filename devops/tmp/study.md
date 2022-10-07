@@ -669,3 +669,16 @@ Data protection: at rest
 - `Amazon Data Lifecycle Manager (DLM)` for EBS Snapshots provides a simple, automated way to back up data stored on Amazon EBS volumes. 
 
 - `ElastiCache` offerings for In-Memory key/value stores include `ElastiCache for Redis`, which can support replication, and `ElastiCache for Memcached` which does not support replication.
+
+----------
+
+## Real question
+
+- implement "least privileges" for CloudFormation `IAM:passrole`
+  - https://aws.amazon.com/blogs/security/how-to-implement-the-principle-of-least-privilege-with-cloudformation-stacksets/
+- NAT gateway vs NAT instance
+- EventBridge - GuardDuty Finding rule
+- `aws resource access manager` & `ec2 image builder`: https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-shared-resources.html
+- `ElasticBeanStalk` email notification
+- AWS Config `ec2-volume-inuse-check`
+- CodeDeploy environment
