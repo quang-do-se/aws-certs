@@ -418,6 +418,8 @@ Data protection: at rest
   - https://docs.aws.amazon.com/autoscaling/ec2/userguide/warm-pool-instance-lifecycle.html#lifecycle-state-transitions
   - https://github.com/aws-samples/aws-lambda-lifecycle-hooks-function
 
+- You cannot use `AWS Lambda` as a notification target for the `Lifecycle Hook` of an Auto Scaling group. You can only configure `Amazon CloudWatch Events`, `Amazon SNS`, or `Amazon SQS` as notification targets.
+
 - Termination Policies
   - https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html#default-termination-policy
 
@@ -441,7 +443,7 @@ Data protection: at rest
   - `AutoScalingReplacingUpdate` - To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, you should use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group. 
     - `WillReplace: 'true'` will replace an ASG with a new one.
   - `AutoScalingRollingUpdate` - To specify how AWS CloudFormation handles rolling updates for an Auto Scaling group, use the AutoScalingRollingUpdate policy. Rolling updates enable you to specify whether AWS CloudFormation updates instances that are in an Auto Scaling group in batches or all at once. 
-  
+
 ----------
 
 ## AWS Security Hub 
@@ -460,7 +462,7 @@ Data protection: at rest
 
 ## EventBridge
 
-- You can call the `EBS Create Snapshot`, `EC2 Image Builder` directly as a target from EventBridge.
+- You can call the `EBS Create Snapshot`, `EC2 Image Builder`, `ECS tasks` directly as a target from EventBridge.
 
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
@@ -602,6 +604,12 @@ Data protection: at rest
 - You can improve performance by increasing the proportion of your viewer requests that are served from CloudFront edge caches instead of going to your origin servers for content; that is, by improving the cache hit ratio for your distribution. To increase your cache hit ratio, you can configure your origin to add a `Cache-Control max-age` directive to your objects, and specify the longest practical value for `max-age`. The shorter the cache duration, the more frequently CloudFront forwards another request to your origin to determine whether the object has changed and, if so, to get the latest version.
 
 - `Origin access identity (OAI)` is mainly used to restrict access to objects in S3 bucket.
+
+----------
+
+## Macie
+
+- `Amazon Macie` continuously monitors data access activity for anomalies, and delivers alerts when it detects risk of unauthorized access or inadvertent data leaks. Amazon Macie has ability to detect global access permissions inadvertently being set on sensitive data, detect uploading of API keys inside source code, and verify sensitive customer data is being stored and accessed in a manner that meets their compliance standards.
 
 ----------
 
