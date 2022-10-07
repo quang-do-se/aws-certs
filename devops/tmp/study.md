@@ -472,6 +472,7 @@ Data protection: at rest
   - `Inspector Assessment Template`
   - `System Manager Automation`
   - `System Manager Run Comand`
+  - `CloudWatch Log Group`
 
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
@@ -518,6 +519,8 @@ Data protection: at rest
 
 - `DynamoDB Streams` is integrated with `AWS Lambda` (only option) to create triggers - pieces of code that automatically respond to events in DynamoDB Streams.
   - Automatically Archive Items to S3 Using DynamoDB Time to Live (TTL) with AWS Lambda and Amazon Kinesis Firehose: https://aws.amazon.com/blogs/database/automatically-archive-items-to-s3-using-dynamodb-time-to-live-with-aws-lambda-and-amazon-kinesis-firehose/
+
+- `Local Secondary Indexes (LSI)` are created at the same time that you create a table. You cannot add a local secondary index to an existing table, nor can you delete any local secondary indexes that currently exist.
 
 ----------
 
@@ -660,3 +663,7 @@ Data protection: at rest
 - `AWS Storage Gateway` offers file-based, volume-based, and tape-based storage solutions. 
 
 - You can use a `Network Address Translation (NAT)` gateway to enable instances in a private subnet to connect to the Internet or other AWS services, but prevent the Internet from initiating a connection with those instances.
+
+- `Amazon Data Lifecycle Manager (DLM)` for EBS Snapshots provides a simple, automated way to back up data stored on Amazon EBS volumes. 
+
+- `ElastiCache` offerings for In-Memory key/value stores include `ElastiCache for Redis`, which can support replication, and `ElastiCache for Memcached` which does not support replication.

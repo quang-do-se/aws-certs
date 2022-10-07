@@ -1,4 +1,4 @@
-### Code Commit
+## Code Commit
 
 #### Overview
 
@@ -72,7 +72,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 ----------
 
-### CodeBuild
+## CodeBuild
 
 #### Overview
 
@@ -129,7 +129,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 ----------
 
-### CodeDeploy
+## CodeDeploy
 
 #### How it works
 
@@ -217,7 +217,7 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 ----------
 
-### CodePipeline
+## CodePipeline
 
 #### Overview
 
@@ -260,7 +260,9 @@ Ref: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambd
 
 - https://aws.amazon.com/blogs/devops/implementing-gitflow-using-aws-codepipeline-aws-codecommit-aws-codebuild-and-aws-codedeploy/
 
-### CodeStar
+----------
+
+## CodeStar
 
 The main file is `template.yml`. Use it to update your project:
 
@@ -268,7 +270,7 @@ The main file is `template.yml`. Use it to update your project:
 
 ----------
 
-### Cloud Formation
+## Cloud Formation
 
 #### Resource types
 
@@ -389,7 +391,7 @@ We can use stack policy to prevent updates to resources: https://docs.aws.amazon
 
 ----------
 
-### Elastic Beanstalk
+## Elastic Beanstalk
 
 #### Saved configurations
 
@@ -414,7 +416,9 @@ We can save non-default configurations then later import and deploy it to other 
 
 We can swap URLs between 2 environments. It is very useful for testing. It modifies Route 53 DNS configuration so it can take some time for the change to be in place.
 
-### Lambda
+----------
+
+## Lambda
 
 CPU is allocated proportional to the memory configured.
 
@@ -436,7 +440,7 @@ SAM uses Cloud Formation behind the scene. It also uses Code Deploy to deploy La
 
 ----------
 
-### Step Functions
+## Step Functions
 
 - It helps orchestrate complex workflows.
 - It helps coordinate Lambda functions or AWS Batch jobs.
@@ -449,7 +453,7 @@ https://docs.aws.amazon.com/step-functions/latest/dg/concepts-input-output-filte
 
 ----------
 
-### API Gateway
+## API Gateway
 
 - https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/
 
@@ -476,7 +480,7 @@ https://docs.aws.amazon.com/step-functions/latest/dg/concepts-input-output-filte
 
 ----------
 
-### Elastic Container Service (ECS)
+## Elastic Container Service (ECS)
 
 - EC2 instance is created with a configuration file `/etc/ecs/ecs.config`.
 
@@ -530,7 +534,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### OpsWorks
+## OpsWorks
 
 - It's an all integrated solution for Chef Cookbooks.
 - It has stack manager, layers manager, instances manager, apps manager, monitoring tool...
@@ -541,7 +545,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### CloudTrail
+## CloudTrail
 
 - Use CloudTrail to track API events. It can store logs in S3 bucket or CloudWatch log group.
 
@@ -557,7 +561,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### Kinesis
+## Kinesis
 
 #### Kinesis Data Streams
 
@@ -635,7 +639,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### CloudWatch
+## CloudWatch
 
 #### Metrics
 
@@ -690,7 +694,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### X-Ray
+## X-Ray
 
 - Distributed tracing, debugging
 - https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html
@@ -698,7 +702,7 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### Amazon ElasticSearch
+## Amazon ElasticSearch
 
 - No serverless offering
 
@@ -709,13 +713,13 @@ Using Fargate helps simplify autoscaling strategy.
 
 ----------
 
-### Tagging strategies
+## Tagging strategies
 
 - https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html
 
 ----------
 
-### System Manager
+## System Manager
 
 - Patching Automation
 - Need to install `SSM Agent` on instances and attach each instance with a role that contains policy `AmazonSSMManagedInstanceCore` for Systems Manager to update, manage, and configure these resources.
@@ -731,7 +735,7 @@ You can use resource groups to organize your AWS resources.
 
 ----------
 
-### EC2 Instance Compliance
+## EC2 Instance Compliance
 
 #### AWS Config
 
@@ -764,13 +768,13 @@ You can use resource groups to organize your AWS resources.
 
 ----------
 
-### Health
+## Health
 
 AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-health-tools/tree/master/automated-actions/AWS_RISK_CREDENTIALS_EXPOSED
 
 ----------
 
-### Trusted Advisor
+## Trusted Advisor
 
 - Global service - need to be in North Virginia region to create an Event.
 - Use cases: https://github.com/aws/Trusted-Advisor-Tools
@@ -790,7 +794,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
   
 ----------
 
-### GuardDuty
+## GuardDuty
 
 - `GuardDuty` is a threat detection service that continuously monitors your AWS accounts and workloads for malicious activity and delivers detailed security findings for visibility and remediation.
 - It detects threat with Machine Learning.
@@ -799,39 +803,39 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### Macie
+## Macie
 
 - Analyze S3 for sensitive data such as Credit Cards, `Personal Identifiable Information (PPI)`, `Proctected Health Information (PHI)`, Private Keys.
 - Applies machine learning and pattern matching techniques to S3 buckets to identify sensitive data.
 
 ----------
 
-### AWS Secrets Manager
+## AWS Secrets Manager
 
 - Easily rotate, manage, and retrieve secrets throughout their lifecycle
 - Secret value size: 65,536 Bytes
 
 ----------
 
-### AWS License Manager
+## AWS License Manager
 
 - Manage license usage for Windows or Oracle...
 
 ----------
 
-### Cost Allocation Tags - Billing
+## Cost Allocation Tags - Billing
 
 - We can slice and dice our cost by tags, allocate our cost to different cost centers.
 
 ----------
 
-### AWS Data Protection (IMPORTANT!!!)
+## AWS Data Protection (IMPORTANT!!!)
 
 - https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/learn/lecture/16349516#overview
 
 ----------
 
-### Auto Scaling Group
+## Auto Scaling Group
 
 #### Launch Template
 
@@ -883,7 +887,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### DynamoDB
+## DynamoDB
 
 - https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/
 
@@ -905,7 +909,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### Multi AZ
+## Multi AZ
 
 - Services where Multi-AZ must be enabled manually: 
   - EFS, ELB, ASG, Beanstalk: assign AZ
@@ -934,7 +938,7 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### Multi Regions
+## Multi Regions
 
 - DynamoDB Global Tables (multi-way replication, enabled by Kinesis Streams)
 - AWS Config Aggregator (multi region & multi account)
@@ -949,14 +953,14 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### Multi Accounts
+## Multi Accounts
 
 - https://aws.amazon.com/blogs/architecture/stream-amazon-cloudwatch-logs-to-a-centralized-account-for-audit-and-analysis/
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html
 
 ----------
 
-### CloudFormation `StackSets`
+## CloudFormation `StackSets`
 
 - Create, update, or delete stacks across multiple accounts and regions with a single operation
 
@@ -964,13 +968,13 @@ AWS Health AWS_RISK_CREDENTIALS_EXPOSED remediation: https://github.com/aws/aws-
 
 ----------
 
-### CodePipeline Multi Regions
+## CodePipeline Multi Regions
 
 - Hands-on: https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments/
 
 ----------
 
-### Disaster Recoverty
+## Disaster Recoverty
 
 #### Objectives
 
