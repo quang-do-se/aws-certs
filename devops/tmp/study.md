@@ -52,8 +52,10 @@
 ## CodeCommit
 
 - CodeCommit `Notification` vs `Trigger`
+
   - Notifications should be used for literal notification and not for taking action based on them.
     - Can send to SNS topic or AWS Chatbot (Slack)
+    
   - Triggers are supposed to initiate action. So, if I need to invoke some service based on this event on which trigger is based, I would do that and hence the option to integrate Lambda service. In a way to add automation after codecommit events.
   - Triggers are more limited in scope: Push to existing branch, create branch or tag, delete branch or tag.
     - Can send to SNS or Lambda
@@ -186,6 +188,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 ## ElasticBeanstalk
 
 - (IMPORTANT!!!) Deployment methods: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+  -  A Blue/green deployment requires that your environment runs independently of your production database. This means that you have to decouple your RDS database from your environment. If your Elastic Beanstalk environment has an attached Amazon RDS DB instance, the data will be lost if you terminate the original (blue) environment.
 
 - (IMPORTANT!!!) Option Precedence, from highest to lowest: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html#configuration-options-precedence
   - `Settings applied directly to the environment` - Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the Elastic Beanstalk console, EB CLI, AWS CLI, and SDKs. The Elastic Beanstalk console and EB CLI also apply recommended values for some options that apply at this level unless overridden.
@@ -462,7 +465,13 @@ Data protection: at rest
 
 ## EventBridge
 
-- You can call the `EBS Create Snapshot`, `EC2 Image Builder`, `ECS tasks` directly as a target from EventBridge.
+- You can call these targets directly from EventBridge:
+  - `EBS Create Snapshot`
+  - `EC2 Image Builder`
+  - `ECS tasks`
+  - `Inspector Assessment Template`
+  - `System Manager Automation`
+  - `System Manager Run Comand`
 
 - `EventBridge` vs. `SNS`: https://medium.com/awesome-cloud/aws-difference-between-amazon-eventbridge-and-amazon-sns-comparison-aws-eventbridge-vs-aws-sns-46708bf5313
 
@@ -649,3 +658,5 @@ Data protection: at rest
 - The default network ACL is configured to allow all traffic to flow in and out of the subnets with which it is associated.
 
 - `AWS Storage Gateway` offers file-based, volume-based, and tape-based storage solutions. 
+
+- You can use a `Network Address Translation (NAT)` gateway to enable instances in a private subnet to connect to the Internet or other AWS services, but prevent the Internet from initiating a connection with those instances.
