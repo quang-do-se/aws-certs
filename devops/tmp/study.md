@@ -151,7 +151,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - `SAM` templates are an extension of `CloudFormation` templates and are written in YAML.
 
-- CloudFormation `custom resources` allow you to extend CloudFOrmation to do things it could not normally do.
+- CloudFormation `custom resources` allow you to extend CloudFormation to do things it could not normally do.
   - Develop `custom resources` backed by `AWS Lambda` to add intelligence to CloudFormation.
 
 - In CloudFormation, as your infrastructure grows, common patterns can emerge in which you declare the same components in multiple templates. You can separate out these common components and create dedicated templates for them. Then use the resource in your template to reference other templates, creating `nested stacks`.
@@ -159,7 +159,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 - CloudFormation's cross-stack reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html
   - Cross-stack references allows separation of concerns and facilitates resource sharing between different teams.
 
-- In `CloudFormation`, `Intrinsic functions` can not be used within the `Parameters` section.
+- In `CloudFormation`, `Intrinsic functions` can NOT be used within the `Parameters` section.
 
 - In `CloudFormation`, to protect resources against update and deletion, use:
 ``` yaml
@@ -177,7 +177,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 ## SQS
 
 - SQS size limit is 256KB
-  - Files must be uploaded to S3 and a reference to them should be sent to SQS.
+  - Large files must be uploaded to S3 and a reference to them should be sent to SQS.
 
 ----------
 
@@ -343,7 +343,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
   - Can check low and high utilization EC2 
   - Integrate with `EventBridge`, `SSM Automation` and `Lambda`
   
-- Can have `CloudWatch Alarms` for tracking service limit susage (Paid option)
+- Can have `CloudWatch Alarms` for tracking service limitusage (Paid option)
 
 - Can only refresh checks/reports every 5 minutes and need to be triggered by an API `refresh-trusted-advisor-check`.
   - Trusted Advisor checks are updated only **weekly**. Consequently, there must be a function to refresh the Trusted Advisor checks if these checks are to be used to evaluate **more frequently than weekly**.
@@ -357,7 +357,7 @@ The `Stack Policy` is the IAM style policy statement which governs what can be c
 
 - Creating Amazon CloudWatch alarms to monitor AWS Trusted Advisor metric (N. Virginia AWS Region): https://docs.aws.amazon.com/awssupport/latest/user/cloudwatch-metrics-ta.html
 
-- AWS Trusted Advisor is integrated with the Amazon CloudWatch Events and Amazon CloudWatch services. You can use `Amazon CloudWatch Events` to detect and react to changes in the status of Trusted Advisor checks. And you can use Amazon CloudWatch to create `Alarms` on Trusted Advisor metrics for check status changes, resource status changes, and service limit utilization.
+- AWS Trusted Advisor is integrated with the `Amazon EventBridge` and `Amazon CloudWatch` services. You can use `Amazon CloudWatch Events` to detect and react to changes in the status of Trusted Advisor checks. And you can use Amazon CloudWatch to create `Alarms` on Trusted Advisor metrics for check status changes, resource status changes, and service limit utilization.
 
 ----------
 
@@ -637,7 +637,7 @@ Data protection: at rest
 
 - `EBS` vs. `EFS` vs. `S3`
   - `EBS` is a high-performance per-instance block storage system designed to act as storage for a single EC2 instance (most of the time).
-  - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**.
+  - `EFS` is a highly scalable file storage system designed to provide flexible storage for **multiple EC2 instances**. (multiple EC2 instances can access the same EFS)
   - `S3` is an object storage system, designed to provide archiving and data control options and to interface with other services **beyond** EC2. It’s also useful for storing static html pages and shared storage for applications.
 
 - AWS Batch has a delay of an hour?
