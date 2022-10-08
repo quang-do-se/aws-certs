@@ -678,6 +678,7 @@ Data protection: at rest
   - https://aws.amazon.com/blogs/security/how-to-implement-the-principle-of-least-privilege-with-cloudformation-stacksets/
 - NAT gateway vs NAT instance
 - EventBridge - GuardDuty Finding rule
+  - How to filter high severity threat?
 - `aws resource access manager` & `ec2 image builder`: https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-shared-resources.html
 - `ElasticBeanStalk` email notification
 - AWS Config `ec2-volume-inuse-check`
